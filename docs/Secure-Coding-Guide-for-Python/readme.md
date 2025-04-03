@@ -75,8 +75,7 @@ It is __not production code__ and requires code-style or python best practices t
 |[CWE-617: Reachable Assertion](CWE-691/CWE-617/README.md)||
 
 |[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)|Prominent CVE|
-|:----------------------------------------------------------------|:----|
-|[CWE-184: Incomplete List of Disallowed Input](CWE-693/CWE-184/.)||
+|[CWE-184: Incomplete List of Disallowed Input](CWE-693/CWE-184/README.md)||
 |[CWE-330: Use of Insufficiently Random Values](CWE-693/CWE-330/README.md)|[CVE-2020-7548](https://www.cvedetails.com/cve/CVE-2020-7548),<br/>CVSSv3.1: __9.8__,<br/>EPSS: __0.22__ (12.12.2024)|
 |[CWE-798: Use of hardcoded credentials](CWE-693/CWE-798/README.md)||
 
@@ -87,7 +86,7 @@ It is __not production code__ and requires code-style or python best practices t
 |[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)|Prominent CVE|
 |:----------------------------------------------------------------|:----|
 |[CWE-230: Improper Handling of Missing Values](CWE-703/CWE-230/.)||
-|[CWE-390: Detection of Error Condition without Action](CWE-703/CWE-390/)||
+|[CWE-390: Detection of Error Condition without Action](CWE-703/CWE-390/README.md)||
 |[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/README.md)||
 |[CWE-754: Improper Check for Unusual or Exceptional Conditions](CWE-703/CWE-754/.)||
 |[CWE-755: Improper Handling of Exceptional Conditions](CWE-703/CWE-755/README.md)|[CVE-2024-39560](https://www.cvedetails.com/cve/CVE-2024-39560),<br/>CVSSv3.1: __6.5__,<br/>EPSS: __0.04__ (01.11.2024)|
