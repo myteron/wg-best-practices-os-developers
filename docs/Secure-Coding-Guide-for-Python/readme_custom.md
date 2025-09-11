@@ -67,7 +67,7 @@ Comments on sections:
 <th>Contains 11 or 1/4 of the rules. Indicating missing sections</th>
 </tr>
 </table>
-
+<br><hr><br>
 <table border=1>
   <colgroup><col style="width:800px;"><col style="width:240px;"></colgroup>
 <tr>
@@ -80,6 +80,11 @@ Comments on sections:
 <td><a href="https://www.cvedetails.com/cve/CVE-2023-28597">CVE-2023-28597</a>, CVSSv3.0: <b style='color:orange'>7.5</b>,<br>EPSS: <b>00.11</b> (05.11.2024)</td>
 </tr>
 <tr><td><a href="CWE-693/CWE-798/README.md">CWE-798: Use of hardcoded credentials</a></td><td></td></tr>
+
+<tr>
+<th>Input from a lesser trusted source</th>
+<th>Prominent CVEs</th>
+</tr>
 
 <tr>
   <td><a href="CWE-664/CWE-134/README.md">CWE-134: Use of Externally-Controlled Format String</a></td>
