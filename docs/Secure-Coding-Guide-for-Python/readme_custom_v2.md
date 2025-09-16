@@ -40,14 +40,15 @@ Observations from creating the sections:
 </tr>
 
 <tr>
+<th>Improper Adherence to Coding Standards (8 rules)</th>
+<th>Reasonable fit, rules moved from MISC</th>
+</tr>
+
+<tr>
 <th>Cryptography (1 rule)</th>
 <th>Good fit, only one rule atm but expected to be used to discuss the missing subject</th>
 </tr>
 
-<tr>
-<th>Misc (8 rules)</th>
-<th>From 11 reduced to 8. Still indicating missing sections</th>
-</tr>
 </table>
 <br><hr><br>
 <table border=1>
@@ -141,18 +142,17 @@ Observations from creating the sections:
 <tr><td><a href="CWE-664/CWE-584/README.md">CWE-584: Return Inside Finally Block</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-665/README.md">CWE-665: Improper Initialization</a></td><td></td></tr>
 
-<tr><th>Advanced - Cryptography</th><th>Prominent CVE</th></tr>
-<tr><td><a href="CWE-693/CWE-330/README.md">CWE-330: Use of Insufficiently Random Values</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2020-7548">CVE-2020-7548</a>, CVSSv3.1: <strong style='color:red'>9.8</strong><br>EPSS: <strong>0.22</strong> (12.12.2024)</td></tr>
-
-<tr><th>Advanced - Misc</th><th>Prominent CVE</th></tr>
-<tr><td><a href="CWE-703/CWE-476/README.md">CWE-476: NULL Pointer Dereference</a></td><td></td></tr>
-<tr><td><a href="CWE-664/CWE-459/README.md">CWE-459: Incomplete Cleanup</a></td><td></td></tr>
-<tr><td><a href="CWE-697/CWE-595/README.md">CWE-595: Comparison of Object References Instead of Object Contents</a></td><td></td></tr>
-<tr><td><a href="CWE-703/CWE-252/README.md">CWE-252: Unchecked Return Value</a></td><td></td></tr>
-<tr><td><a href="CWE-691/CWE-617/README.md">CWE-617: Reachable Assertion</a></td><td></td></tr>
+<tr><th>Improper Adherence to Coding Standards</th><th>Prominent CVE</th></tr>
 <tr><td><a href="CWE-710/CWE-1095/README.md">CWE-1095: Loop Condition Value Update within the Loop</a></td><td></td></tr>
 <tr><td><a href="CWE-710/CWE-1109/README.md">CWE-1109: Use of Same Variable for Multiple Purposes</a></td><td></td></tr>
-<tr><td><a href="CWE-693/CWE-798/README.md">CWE-798: Use of hardcoded credentials</a></td><td></td></tr>
+<tr><td><a href="CWE-697/CWE-595/README.md">CWE-595: Comparison of Object References Instead of Object Contents</a></td><td></td></tr>
+<tr><td><a href="CWE-703/CWE-476/README.md">CWE-476: NULL Pointer Dereference</a></td><td></td></tr>
+<tr><td><a href="CWE-664/CWE-459/README.md">CWE-459: Incomplete Cleanup</a></td><td></td></tr>
+<tr><td><a href="CWE-703/CWE-252/README.md">CWE-252: Unchecked Return Value</a></td><td></td></tr>
+<tr><td><a href="CWE-691/CWE-617/README.md">CWE-617: Reachable Assertion</a></td><td></td></tr>
+
+<tr><th>Advanced - Cryptography</th><th>Prominent CVE</th></tr>
+<tr><td><a href="CWE-693/CWE-330/README.md">CWE-330: Use of Insufficiently Random Values</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2020-7548">CVE-2020-7548</a>, CVSSv3.1: <strong style='color:red'>9.8</strong><br>EPSS: <strong>0.22</strong> (12.12.2024)</td></tr>
 </table>
 
 ## License
