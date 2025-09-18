@@ -134,7 +134,7 @@ Observations from creating the sections:
 <tr><th>Serialization Deserialization</th><th>Prominent CVEs</th></tr>
 <tr><td><a href="CWE-664/CWE-502/.">CWE-502: Deserialization of Untrusted Data</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2018-8021">CVE-2018-8021</a>, CVSSv3.0: <strong style='color:red'>9.8</strong>,<br/>EPSS: <strong>93.54</strong> (05.11.2024)</td></tr>
 
-<tr><th>Multiprocessing and Multithreading</th><th>Prominent CVE</th></tr>
+<tr><th><a href="Intro_to_multiprocessing_and_multithreading">Intro to Multiprocessing and Multithreading</a></th><th>Prominent CVE</th></tr>
 <tr><td><a href="CWE-664/CWE-400/README.md">CWE-400: Uncontrolled Resource Consumption</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-410/README.md">CWE-410: Insufficient Resource Pool</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-833/README.md">CWE-833: Deadlock</a></td><td></td></tr>
