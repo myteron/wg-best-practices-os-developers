@@ -10,43 +10,57 @@ Second draft for the [readme_custom.md](readme_custom.md) version.
 Observations from creating the sections:
 <table border=1>
 <tr>
-<th>Inroduction (2 rules)</th>
-<th>Seemingly good fit for a start</th>
+<th>Section</th>
+<th># Rules</th>
+<th>Comment</th>
 </tr>
 
 <tr>
-<th>Encoding and Strings (2 rules)</th>
-<th>Reasonable fit, merge from "input from lesser trusted source" and "strings", some moved to logs</th>
+<th>Inroduction</th>
+<td>2</td>
+<td>Seemingly good fit for a start</td>
 </tr>
 
 <tr>
-<th>Numbers (7 rules)</th>
-<th>Good fit.</th>
+<th>Encoding and Strings</th>
+<td>2</td>
+<td>Reasonable fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
 </tr>
 
 <tr>
-<th>Exception handling and logging (13 rules)</th>
-<th>Good fit now, better fit then 'strings', slightly overloaded now</th>
+<th>Numbers</th>
+<td>7</td>
+<td>Good fit.</td>
 </tr>
 
 <tr>
-<th>Serialization Deserialization (1 rule)</th>
-<th>Good fit, but only one rule</th>
+<th>Exception handling and logging</th>
+<td>13</td>
+<td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
-<th>Multiprocessing and Multithreading (6 rules)</th>
-<th>Good fit</th>
+<th>Serialization Deserialization</th>
+<td>1</td>
+<td>Good fit, but only one rule</td>
 </tr>
 
 <tr>
-<th>Improper Adherence to Coding Standards (8 rules)</th>
-<th>Reasonable fit, rules moved from MISC</th>
+<th>Multiprocessing and Multithreading</th>
+<td>6</td>
+<td>Good fit</td>
 </tr>
 
 <tr>
-<th>Cryptography (1 rule)</th>
-<th>Good fit, only one rule atm but expected to be used to discuss the missing subject</th>
+<th>Improper Adherence to Coding Standards</th>
+<td>8</th>
+<td>Reasonable fit, rules moved from MISC</td>
+</tr>
+
+<tr>
+<th>Cryptography</th>
+<td>1</td>
+<td>Good fit, only one rule atm but expected to be used to discuss the missing subject</td>
 </tr>
 
 </table>
