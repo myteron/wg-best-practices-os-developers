@@ -11,58 +11,75 @@ Comments on sections:
 
 <table border=1>
 <tr>
-<th>Learn the basics (2 rules)</th>
-<th>Could also be called 'introduction', appears a good choice for setting the scene</th>
+<th>Section title</th>
+<th># Rules</th>
+<th>Comment</th>
 </tr>
 
 <tr>
-<th>Input from a lesser trusted source (6 rules)</th>
-<th>Bleeds into 'strings' section, hard to figure out what to put into it</th>
+<th>Learn the basics</th>
+<td>2</td>
+<td>Could also be called 'introduction', appears a good choice for setting the scene</td>
 </tr>
 
 <tr>
-<th>Output to a lesser trusted source(1 rule)</th>
-<th>Tricky as it also bleeds into 'strings' making it hard to figure out what to put in it</th>
+<th>Input from a lesser trusted source</th>
+<td>6</td>
+<td>Bleeds into 'strings' section, hard to figure out what to put into it</td>
 </tr>
 
 <tr>
-<th>Strings (3 rules)</th>
-<th>Bad fit. Listed rules use input output in its examples to explain encoding issues. CWE-184 'allowed lists' is only here as its using encoding in its example's.</th>
+<th>Output to a lesser trusted source</th>
+<td>1</td>
+<td>Tricky as it also bleeds into 'strings' making it hard to figure out what to put in it</td>
+</tr>
+
+<tr>
+<th>Strings</th>
+<td>3</td>
+<td>Bad fit. Listed rules use input output in its examples to explain encoding issues. CWE-184 'allowed lists' is only here as its using encoding in its example's.</td>
 </tr>
 
 <tr>
 <th>Numbers (6 rules)</th>
-<th>Good fit.</th>
+<td>6</td>
+<td>Good fit.</td>
 </tr>
 
 <tr>
-<th>Basic Operators (1 rule)</th>
-<th>Bad fit as we only have one rule in here</th>
+<th>Basic Operators</th>
+<td>1</th>
+<td>Bad fit as we only have one rule in here</td>
 </tr>
 
 <tr>
-<th>Serialization Deserialization (1 rule)</th>
-<th>Good fit but only one rule</th>
+<th>Serialization Deserialization</th>
+<td>1</td>
+<td>Good fit but only one rule</td>
 </tr>
 
 <tr>
-<th>Exception Handling (6 rules)</th>
-<th>Good fit with several rules</th>
+<th>Exception Handling</th>
+<td>6</td>
+<td>Good fit with several rules</td>
 </tr>
 
 <tr>
-<th>Multiprocessing and Multithreading (6 rules)</th>
-<th>Good fit with several rules</th>
+<th>Multiprocessing and Multithreading</th>
+<td>6</td>
+<td>Good fit with several rules</td>
 </tr>
 
 <tr>
-<th>Cryptography (1 rule)</th>
-<th>Good fit, only one rule atm but expected to be used to discuss the missing subject</th>
+<th>Cryptography</th>
+<td>1</td>
+<td>Good fit, only one rule atm but expected to be used to discuss the missing subject</td>
 </tr>
 
 <tr>
-<th>Misc (11 rules)</th>
-<th>Contains 11 or 1/4 of the rules. Indicating missing sections</th>
+<th>Misc</th>
+<td>11</td>
+<td>Contains 11 or 1/4 of the rules. Indicating missing sections</td>
 </tr>
 </table>
 <br><hr><br>
