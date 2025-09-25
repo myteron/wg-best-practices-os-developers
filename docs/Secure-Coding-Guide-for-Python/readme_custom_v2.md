@@ -23,8 +23,8 @@ Observations from creating the sections:
 
 <tr>
 <th>Encoding and Strings</th>
-<td>2</td>
-<td>Reasonable fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
+<td>4</td>
+<td>Good fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
 </tr>
 
 <tr>
@@ -34,8 +34,20 @@ Observations from creating the sections:
 </tr>
 
 <tr>
-<th>Exception handling and logging</th>
-<td>13</td>
+<th>Neutralisation</th>
+<td>7</td>
+<td>Good fit now, better fit then 'strings', slightly overloaded now</td>
+</tr>
+
+<tr>
+<th>Exception handling</th>
+<td>5</td>
+<td>Good fit now, better fit then 'strings', slightly overloaded now</td>
+</tr>
+
+<tr>
+<th>Logging</th>
+<td>4</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
@@ -47,13 +59,13 @@ Observations from creating the sections:
 
 <tr>
 <th>Multiprocessing and Multithreading</th>
-<td>6</td>
+<td>7</td>
 <td>Good fit</td>
 </tr>
 
 <tr>
 <th>Improper Adherence to Coding Standards</th>
-<td>8</th>
+<td>7</th>
 <td>Reasonable fit, rules moved from MISC</td>
 </tr>
 
@@ -84,6 +96,8 @@ Observations from creating the sections:
 </tr>
 <tr><td><a href="CWE-707/CWE-175/README.md">CWE-175: Improper Handling of Mixed Encoding</a></td><td></td></tr>
 <tr><td><a href="CWE-707/CWE-838/README.md">CWE-838: Inappropriate Encoding for Output Context</a></td><td></td></tr>
+<tr><td><a href="CWE-707/CWE-180/README.md">CWE-180: Incorrect behavior order: Validate before Canonicalize</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2022-26136/">CVE-2022-26136</a>,<br/>CVSSv3.1: <tr><td><a href="CWE-693/CWE-182/README.md">pySCG-182: Enforce control over encoding such as UTF-8</a></td><td></td></tr>
+<strong>9.8</strong>,<br/>EPSS: <strong>00.18</strong> (24.04.2025)</td></tr>
 
 <tr><th>Numbers</th><th>Prominent CVEs</th></tr>
 <tr><td><a href="CWE-664/CWE-197/README.md">CWE-197:Ensure to have predictable outcomes in loops by using int instead of float variables as a counter</a></td><td></td></tr>
@@ -128,21 +142,20 @@ Observations from creating the sections:
   <td><a href="https://www.cvedetails.com/cve/CVE-2015-1326">CVE-2015-1326</a>,<br/>CVSSv3.0: <strong style='color:red'>8.8</strong>,<br/>EPSS: <strong>00.20</strong> (23.11.2023)</td>
 </tr>
 
-<tr><th>Exception handling and logging</th><th>Prominent CVEs</th></tr>
+<tr><th>Exception handling</th><th>Prominent CVEs</th></tr>
+<tr><td><a href="CWE-703/CWE-390/README.md">CWE-390: Detection of Error Condition without Action</a></td><td></td></tr>
+<tr><td><a href="CWE-703/CWE-397/README.md">CWE-397: Declaration of Throws for Generic Exception</a></td><td></td></tr>
+<tr><td><a href="CWE-703/CWE-754/README.md">CWE-754: Improper Check for Unusual or Exceptional Conditions - float</a></td><td></td></tr>
+<tr><td><a href="CWE-703/CWE-755/README.md">CWE-755: Improper Handling of Exceptional Conditions</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2024-39560">CVE-2024-39560</a>,CVSSv3.1: <strong style='color:yellow'>6.5</strong>,<br/>EPSS: <strong>0.04</strong> (01.11.2024)</td></tr>
+<tr><td><a href="CWE-703/CWE-230/README.md">CWE-230: Improper Handling of Missing Values</a></td><td></td></tr>
+
+<tr><th>Logging</th><th>Prominent CVEs</th></tr>
 <tr>
   <td><a href="CWE-664/CWE-532/README.md">CWE-532: Insertion of Sensitive Information into Log File</a></td>
   <td><a href="https://www.cvedetails.com/cve/CVE-2023-45585">CVE-2023-45585</a>,<br/>CVSSv3.1: <strong>9.8</strong>,<br/>EPSS: <strong>0.04</strong> (01.11.2024)</td>
 </tr>
-<tr><td><a href="CWE-693/CWE-182/README.md">pySCG-182: Enforce control over encoding such as UTF-8</a></td><td></td></tr>
-<tr><td><a href="CWE-703/CWE-390/README.md">CWE-390: Detection of Error Condition without Action</a></td><td></td></tr>
-<tr><td><a href="CWE-703/CWE-392/README.md">CWE-392: Missing Report of Error Condition</a></td><td></td></tr>
-<tr><td><a href="CWE-703/CWE-397/README.md">CWE-397: Declaration of Throws for Generic Exception</a></td><td></td></tr>
-<tr><td><a href="CWE-703/CWE-754/README.md">CWE-754: Improper Check for Unusual or Exceptional Conditions - float</a></td><td></td></tr>
-<tr><td><a href="CWE-703/CWE-755/README.md">CWE-755: Improper Handling of Exceptional Conditions</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2024-39560">CVE-2024-39560</a>,CVSSv3.1: <strong style='color:yellow'>6.5</strong>,<br/>EPSS: <strong>0.04</strong> (01.11.2024)</td></tr>
 <tr><td><a href="CWE-707/CWE-117/.">CWE-117: Improper Output Neutralization for Logs</a></td><td></td></tr>
 <tr><td><a href="CWE-693/CWE-778/README.md">CWE-778: Insufficient Logging</a></td><td></td></tr>
-<tr><td><a href="CWE-707/CWE-180/README.md">CWE-180: Incorrect behavior order: Validate before Canonicalize</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2022-26136/">CVE-2022-26136</a>,<br/>CVSSv3.1: <strong>9.8</strong>,<br/>EPSS: <strong>00.18</strong> (24.04.2025)</td></tr>
-<tr><td><a href="CWE-703/CWE-230/README.md">CWE-230: Improper Handling of Missing Values</a></td><td></td></tr>
 <tr><td><a href="CWE-710/CWE-489/README.md">CWE-489: Active Debug Code</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2018-14649">CVE-2018-14649</a>, CVSSv3.1: <strong style='color:red'>9.8</strong>, EPSS: <strong>69.64</strong> (12.12.2023)</td></tr>
 
 <tr><th>Serialization Deserialization</th><th>Prominent CVEs</th></tr>
@@ -155,6 +168,7 @@ Observations from creating the sections:
 <tr><td><a href="CWE-691/CWE-362/README.md">CWE-362: Concurrent Execution Using Shared Resource with Improper Synchronization ("Race Condition")</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-584/README.md">CWE-584: Return Inside Finally Block</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-665/README.md">CWE-665: Improper Initialization</a></td><td></td></tr>
+<tr><td><a href="CWE-703/CWE-392/README.md">pySCG-392: Missing Report of Error Condition in a Threadpool</a></td><td></td></tr>
 
 <tr><th>Improper Adherence to Coding Standards</th><th>Prominent CVE</th></tr>
 <tr><td><a href="CWE-710/CWE-1095/README.md">CWE-1095: Loop Condition Value Update within the Loop</a></td><td></td></tr>

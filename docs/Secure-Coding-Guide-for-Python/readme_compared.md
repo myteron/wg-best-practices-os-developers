@@ -278,6 +278,8 @@ Following section have no Python rules:
 
 ## The [readme_custom_v2.md](readme_custom_v2.md) self baked sections
 
+In the most recent version of this we have split 'exception handling and logging' into 'exceptions' and 'logging'. Also turned out that some title's are misleading in a way that the content ends up in the wrong chapter such as CWE-180 and CWE-182 now moved to Encoding and Strings. CWE-392 was moved to Multiprocssing.
+
 <table border=1>
 <tr>
 <th>Section</th>
@@ -293,8 +295,8 @@ Following section have no Python rules:
 
 <tr>
 <th>Encoding and Strings</th>
-<td>2</td>
-<td>Reasonable fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
+<td>4</td>
+<td>Good fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
 </tr>
 
 <tr>
@@ -304,8 +306,20 @@ Following section have no Python rules:
 </tr>
 
 <tr>
-<th>Exception handling and logging</th>
-<td>13</td>
+<th>Neutralisation</th>
+<td>7</td>
+<td>Good fit now, better fit then 'strings', slightly overloaded now</td>
+</tr>
+
+<tr>
+<th>Exception handling</th>
+<td>5</td>
+<td>Good fit now, better fit then 'strings', slightly overloaded now</td>
+</tr>
+
+<tr>
+<th>Logging</th>
+<td>4</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
@@ -317,13 +331,13 @@ Following section have no Python rules:
 
 <tr>
 <th>Multiprocessing and Multithreading</th>
-<td>6</td>
+<td>7</td>
 <td>Good fit</td>
 </tr>
 
 <tr>
 <th>Improper Adherence to Coding Standards</th>
-<td>8</th>
+<td>7</th>
 <td>Reasonable fit, rules moved from MISC</td>
 </tr>
 
