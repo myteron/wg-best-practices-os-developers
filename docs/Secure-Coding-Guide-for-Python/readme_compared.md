@@ -288,63 +288,62 @@ In the most recent version of this we have split 'exception handling and logging
 </tr>
 
 <tr>
-<th>Inroduction</th>
+<th>01 Inroduction</th>
 <td>2</td>
 <td>Seemingly good fit for a start</td>
 </tr>
 
 <tr>
-<th>Encoding and Strings</th>
+<th>02 Encoding and Strings</th>
 <td>4</td>
 <td>Good fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
 </tr>
 
 <tr>
-<th>Numbers</th>
+<th>03 Numbers</th>
 <td>7</td>
 <td>Good fit.</td>
 </tr>
 
 <tr>
-<th>Neutralisation</th>
+<th>04 Neutralisation</th>
 <td>7</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
-<th>Exception handling</th>
+<th>05 Exception handling</th>
 <td>5</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
-<th>Logging</th>
+<th>06 Logging</th>
 <td>4</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
-<th>Serialization Deserialization</th>
+<th>07 Serialization Deserialization</th>
 <td>1</td>
 <td>Good fit, but only one rule</td>
 </tr>
 
 <tr>
-<th>Multiprocessing and Multithreading</th>
+<th>08 Concurrency</th>
 <td>7</td>
 <td>Good fit</td>
 </tr>
 
 <tr>
-<th>Improper Adherence to Coding Standards</th>
+<th>09 Coding Standards</th>
 <td>7</th>
 <td>Reasonable fit, rules moved from MISC</td>
 </tr>
 
 <tr>
-<th>Cryptography</th>
+<th>10 Cryptography</th>
 <td>1</td>
 <td>Good fit, only one rule atm but expected to be used to discuss the missing subject</td>
 </tr>
-
 </table>

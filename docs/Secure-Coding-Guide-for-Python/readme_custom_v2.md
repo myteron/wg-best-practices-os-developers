@@ -58,13 +58,13 @@ Observations from creating the sections:
 </tr>
 
 <tr>
-<th>08 Multiprocessing and Multithreading</th>
+<th>08 Concurrency</th>
 <td>7</td>
 <td>Good fit</td>
 </tr>
 
 <tr>
-<th>09 Improper Adherence to Coding Standards</th>
+<th>09 Coding Standards</th>
 <td>7</th>
 <td>Reasonable fit, rules moved from MISC</td>
 </tr>
@@ -161,7 +161,7 @@ Observations from creating the sections:
 <tr><th>07 Serialization Deserialization</th><th>Prominent CVEs</th></tr>
 <tr><td><a href="CWE-664/CWE-502/.">CWE-502: Deserialization of Untrusted Data</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2018-8021">CVE-2018-8021</a>, CVSSv3.0: <strong style='color:red'>9.8</strong>,<br/>EPSS: <strong>93.54</strong> (05.11.2024)</td></tr>
 
-<tr><th><a href="Intro_to_multiprocessing_and_multithreading">08 Intro to Multiprocessing and Multithreading</a></th><th>Prominent CVE</th></tr>
+<tr><th><a href="Intro_to_multiprocessing_and_multithreading">08 Concurrency</a></th><th>Prominent CVE</th></tr>
 <tr><td><a href="CWE-664/CWE-400/README.md">CWE-400: Uncontrolled Resource Consumption</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-410/README.md">CWE-410: Insufficient Resource Pool</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-833/README.md">CWE-833: Deadlock</a></td><td></td></tr>
@@ -170,7 +170,7 @@ Observations from creating the sections:
 <tr><td><a href="CWE-664/CWE-665/README.md">CWE-665: Improper Initialization</a></td><td></td></tr>
 <tr><td><a href="CWE-703/CWE-392/README.md">pySCG-392: Missing Report of Error Condition in a Threadpool</a></td><td></td></tr>
 
-<tr><th>09 Improper Adherence to Coding Standards</th><th>Prominent CVE</th></tr>
+<tr><th>08 Coding Standards</th><th>Prominent CVE</th></tr>
 <tr><td><a href="CWE-710/CWE-1095/README.md">CWE-1095: Loop Condition Value Update within the Loop</a></td><td></td></tr>
 <tr><td><a href="CWE-710/CWE-1109/README.md">CWE-1109: Use of Same Variable for Multiple Purposes</a></td><td></td></tr>
 <tr><td><a href="CWE-697/CWE-595/README.md">CWE-595: Comparison of Object References Instead of Object Contents</a></td><td></td></tr>
@@ -179,7 +179,7 @@ Observations from creating the sections:
 <tr><td><a href="CWE-703/CWE-252/README.md">CWE-252: Unchecked Return Value</a></td><td></td></tr>
 <tr><td><a href="CWE-691/CWE-617/README.md">CWE-617: Reachable Assertion</a></td><td></td></tr>
 
-<tr><th>10 Advanced - Cryptography</th><th>Prominent CVE</th></tr>
+<tr><th>10 Cryptography</th><th>Prominent CVE</th></tr>
 <tr><td><a href="CWE-693/CWE-330/README.md">CWE-330: Use of Insufficiently Random Values</a></td><td><a href="https://www.cvedetails.com/cve/CVE-2020-7548">CVE-2020-7548</a>, CVSSv3.1: <strong style='color:red'>9.8</strong><br>EPSS: <strong>0.22</strong> (12.12.2024)</td></tr>
 </table>
 
