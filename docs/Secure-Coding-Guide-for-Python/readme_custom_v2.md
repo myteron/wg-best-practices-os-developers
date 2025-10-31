@@ -93,7 +93,7 @@ Observations from creating the sections:
 <table border=1>
   <colgroup><col style="width:800px;"><col style="width:240px;"></colgroup>
 <tr>
-<th>01 Introduction - Hello World</th>
+<th>01 Introduction</th>
 <th>Prominent CVEs</th>
 </tr>
 
@@ -129,7 +129,7 @@ Observations from creating the sections:
 <tr><td><a href="CWE-664/CWE-681/README.md">pyscg-num-0681: String representations of floating-point numbers must not be compared or inspected outside of specialized modules such as decimal or math</a></td><td></td></tr>
 <tr><td><a href="CWE-664/CWE-681/01/README.md">pyscg-num-0681-01: Avoid using floating-point literals.</a></td><td></td></tr>
 
-<tr><th>04 Proper Neutralization</th><th>Prominent CVEs</th></tr>
+<tr><th>04 Neutralization</th><th>Prominent CVEs</th></tr>
 <tr><td><a href="CWE-693/CWE-184/README.md">pyscg-ntrl-0184: Use 'allow lists' to avoid continuesly updates to 'deny lists'.</a></td><td></td></tr>
 
 <tr>
