@@ -282,68 +282,80 @@ In the most recent version of this we have split 'exception handling and logging
 
 <table border=1>
 <tr>
+<th>Section ID</th>
 <th>Section</th>
 <th># Rules</th>
 <th>Comment</th>
 </tr>
 
 <tr>
+<th>intro</th>
 <th>01 Inroduction</th>
-<td>2</td>
+<td>3</td>
 <td>Seemingly good fit for a start</td>
 </tr>
 
 <tr>
+<th>enc_str</th>
 <th>02 Encoding and Strings</th>
 <td>4</td>
 <td>Good fit, merge from "input from lesser trusted source" and "strings", some moved to logs</td>
 </tr>
 
 <tr>
+<th>num</th>
 <th>03 Numbers</th>
 <td>7</td>
 <td>Good fit.</td>
 </tr>
 
 <tr>
+<th>ntrl</th>
 <th>04 Neutralisation</th>
 <td>7</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
-<th>05 Exception handling</th>
+<th>exc</th>
+<th>05 Exceptions</th>
 <td>5</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
+<th>log</th>
 <th>06 Logging</th>
 <td>4</td>
 <td>Good fit now, better fit then 'strings', slightly overloaded now</td>
 </tr>
 
 <tr>
+<th>srl_dsrl</th>
 <th>07 Serialization Deserialization</th>
 <td>1</td>
 <td>Good fit, but only one rule</td>
 </tr>
 
 <tr>
+<th>conc</th>
 <th>08 Concurrency</th>
 <td>7</td>
 <td>Good fit</td>
 </tr>
 
 <tr>
+<th>cod_std</th>
 <th>09 Coding Standards</th>
 <td>7</th>
 <td>Reasonable fit, rules moved from MISC</td>
 </tr>
 
 <tr>
+<th>crypt</th>
 <th>10 Cryptography</th>
-<td>1</td>
+<td>01</td>
 <td>Good fit, only one rule atm but expected to be used to discuss the missing subject</td>
 </tr>
+
 </table>
