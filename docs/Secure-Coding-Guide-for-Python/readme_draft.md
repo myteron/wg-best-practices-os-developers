@@ -79,22 +79,23 @@ move the encoding examples into the encoding 0045 rule.</td>
 change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 <td><a href="https://cwe.mitre.org/data/definitions/182.html">CWE-182</a></td>
 <td>Handling data between different encodings or while filtering out untrusted characters and strings can cause malicious content to slip through input sanitation.</td>
-<td>Encoding changes, such as changing from <code>UTF-8</code> to pure <code>ASCII</code>, can result in turning non-functional payloads, such as <code>&lt;script生&gt;</code>, into functional <code>&lt;script&gt;</code> tags. Mixed encoding modes <a href="../pyscg-0044/README.md">pyscg-0044: Incorrect behavior order: Validate before Canonicalize</a> can also play a role. The recommendation by <a href="https://www.youtube.com/watch?v=sgHbC6udIqc">Batchelder 2022</a> to use a single type of encoding and mode is only applicable for a single project or supplier. The recommendation to always choose the <code>UTF-8</code> by <a href="https://www.w3.org/International/questions/qa-what-is-encoding">W3c.org 2025</a> provides no guarantee and is already flawed by Windows having <code>Windows-1252</code> encoding for some Python installations.</td>
+<td>Encoding changes, such as changing from <code>UTF-8</code> to pure <code>ASCII</code>, can result in turning non-functional payloads, such as <code>&lt;script生&gt;</code>, into functional <code>&lt;script&gt;</code> tags. Mixed encoding modes <a href="02_encoding_and_strings/pyscg-0044/README.md">pyscg-0044: Incorrect behavior order: Validate before Canonicalize</a> can also play a role. The recommendation by <a href="https://www.youtube.com/watch?v=sgHbC6udIqc">Batchelder 2022</a> to use a single type of encoding and mode is only applicable for a single project or supplier. The recommendation to always choose the <code>UTF-8</code> by <a href="https://www.w3.org/International/questions/qa-what-is-encoding">W3c.org 2025</a> provides no guarantee and is already flawed by Windows having <code>Windows-1252</code> encoding for some Python installations.</td>
 </tr>
 
 <tr>
 <td><a href="02_encoding_and_strings/pyscg-0046/README.md">pyscg-0046</a></td>
 <td>Inappropriate Encoding for Output Context</td>
-<td></td>
+<td>Merge knowledge into into 0045</td>
 <td><a href="https://cwe.mitre.org/data/definitions/838.html">CWE-838</a></td>
 <td>Inappropriate handling of an encoding from untrusted sources or unexpected encoding can lead to unexpected values, data loss, or become the root cause of an attack.</td>
-<td>Mixed encoding can lead to unexpected results and become a root cause for attacks as showcased in <a href="../pyscg-0044/README.md">pyscg-0044: Incorrect Behavior Order: Validate Before Canonicalize</a> and <a href="../pyscg-0043/README.md">pyscg-0043: Improper Handling Of Mixed Encoding</a> This rule showcases capturing the root cause by untrusted source its original binary without compromising the logging system for forensics.</td>
+<td>Mixed encoding can lead to unexpected results and become a root cause for attacks as showcased in <a href="02_encoding_and_strings/pyscg-0044/README.md">pyscg-0044: Incorrect Behavior Order: Validate Before Canonicalize</a> and <a href="../pyscg-0043/README.md">pyscg-0043: Improper Handling Of Mixed Encoding</a> This rule showcases capturing the root cause by untrusted source its original binary without compromising the logging system for forensics.</td>
 </tr>
 
 <tr>
 <td><a href="03_numbers/pyscg-0001/README.md">pyscg-0001</a></td>
 <td>Insufficient Precision or Accuracy of a Real Number</td>
-<td></td>
+<td>Control Numeric Precision<br><br>
+Note: check if we correctly talk about Real vs other types of numbers in the rule</td>
 <td><a href="https://cwe.mitre.org/data/definitions/1339.html">CWE-1339</a></td>
 <td>Avoid floating-point and use integers or the <code>decimal</code> module to ensure precision in applications that require high accuracy, such as in financial or banking computations.</td>
 <td>In Python, floating-point types are constrained by a fixed number of binary mantissa bits, typically allowing for around seven decimal digits of precision (24-bit values). Consequently, they are not well-suited for representing surds, such as <code>√7</code> or <code>π</code> with full accuracy. Additionally, due to their binary nature, floating-point types are incapable of exactly terminating decimals in <code>base 10</code>, such as <code>0.3</code>, which has a repeating binary representation.</td>
@@ -103,7 +104,8 @@ change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 <tr>
 <td><a href="03_numbers/pyscg-0002/README.md">pyscg-0002</a></td>
 <td>Integer Underflow ('Wrap or Wraparound')</td>
-<td></td>
+<td>Guard C-Backed Numbers Against Overflow<br><br>
+TODO: explain what we mean by c-backed numebers in the rule.</td>
 <td><a href="https://cwe.mitre.org/data/definitions/191.html">CWE-191</a></td>
 <td>Ensure that integer overflow is properly handled in order to avoid unexpected behavior.</td>
 <td>Python data types can be divided into two categories: - Built-in types such as <code>int</code>, <code>float</code>, or <code>complex</code> <a href="https://docs.python.org/3.9/library/stdtypes.html">[Python 2024]</a>. These types are provided by classes and are protected against overflows.</td>
@@ -112,7 +114,8 @@ change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 <tr>
 <td><a href="03_numbers/pyscg-0003/README.md">pyscg-0003</a></td>
 <td>Promote Readability and Compatibility by Using Mathematical Written Code with Arithmetic Operations Instead of Bit-wise Operations</td>
-<td></td>
+<td>Use Arithmetic Over Bitwise Operations<br><br>
+TODO: merge 0053 required knowledge into 0003</td>
 <td><a href="https://cwe.mitre.org/data/definitions/1335.html">CWE-1335</a></td>
 <td>Avoid using bitwise operations for calculations, write math as math instead to ensure code clarity, compatibility and maintainability.</td>
 <td><code>C</code> and <code>C++</code> used to have two design patterns in order to optimize resource utilization:</td>
@@ -121,7 +124,7 @@ change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 <tr>
 <td><a href="03_numbers/pyscg-0004/README.md">pyscg-0004</a></td>
 <td>Numeric Truncation Error</td>
-<td></td>
+<td>Use Integer Loop Counters</td>
 <td><a href="https://cwe.mitre.org/data/definitions/197.html">CWE-197</a></td>
 <td>Ensure to have predictable outcomes in loops by using int instead of <code>float</code> variables as a counter.</td>
 <td>Floating-point arithmetic can only represent a finite subset of real numbers <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8766229">[IEEE Std 754-2019]</a>, such as <code>0.555....</code> represented by <code>0.5555555555555556</code> also discussed in <a href="../pyscg-0001/README.md">pyscg-0001: Insufficient Precision Or Accuracy Of A Real Number</a>. Code examples in this rule are based on [Albing and Vossen, 2017].</td>
@@ -157,7 +160,7 @@ change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 <tr>
 <td><a href="03_numbers/pyscg-0053/README.md">pyscg-0053</a></td>
 <td>Incorrect Bitwise Shift of Integer</td>
-<td></td>
+<td>TODO: merge knowledge into 0003 and remove.</td>
 <td><a href="https://cwe.mitre.org/data/definitions/1335.html">CWE-1335</a></td>
 <td>Avoid mixing bitwise shifts with arithmetic operations, instead, use clear mathematical expressions instead to maintain predictable behavior, readability, and compatibility.</td>
 <td>Ensure to know what bit-wise shift operators do in case you can not avoid them as recommended in <em>NUM01-J. Do not perform bitwise and arithmetic operations on the same data</em> <a href="https://wiki.sei.cmu.edu/confluence/display/java/NUM01-J.+Do+not+perform+bitwise+and+arithmetic+operations+on+the+same+data">[SEI CERT JAVA 2024]</a> and use math instead.</td>
