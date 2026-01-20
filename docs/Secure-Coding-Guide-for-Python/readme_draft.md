@@ -13,6 +13,12 @@ This table provides an overview of all pyscg rules with their current titles, sp
 </tr>
 
 <tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">01 Introduction</h3>
+</th>
+</tr>
+
+<tr>
 <td><a href="01_introduction/pyscg-0040/README.md">pyscg-0040</a></td>
 <td>Trust Boundary Violation</td>
 <td>Use Process Isolation for Trust Zones</td>
@@ -49,6 +55,12 @@ Create isolated trust zones on the operating system level.
 <td><a href="https://cwe.mitre.org/data/definitions/472.html">CWE-472</a></td>
 <td>Ensuring user roles are determined on the server side prevents attackers from manipulating permissions through client-side data.</td>
 <td></td>
+</tr>
+
+<tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">02 Encoding and Strings</h3>
+</th>
 </tr>
 
 <tr>
@@ -92,6 +104,12 @@ change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 </tr>
 
 <tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">03 Numbers</h3>
+</th>
+</tr>
+
+<tr>
 <td><a href="03_numbers/pyscg-0001/README.md">pyscg-0001</a></td>
 <td>Insufficient Precision or Accuracy of a Real Number</td>
 <td>Control Numeric Precision<br><br>
@@ -109,6 +127,15 @@ TODO: explain what we mean by c-backed numebers in the rule.</td>
 <td><a href="https://cwe.mitre.org/data/definitions/191.html">CWE-191</a></td>
 <td>Ensure that integer overflow is properly handled in order to avoid unexpected behavior.</td>
 <td>Python data types can be divided into two categories: - Built-in types such as <code>int</code>, <code>float</code>, or <code>complex</code> <a href="https://docs.python.org/3.9/library/stdtypes.html">[Python 2024]</a>. These types are provided by classes and are protected against overflows.</td>
+</tr>
+
+<tr>
+<td><a href="03_numbers/pyscg-0053/README.md">pyscg-0053</a></td>
+<td>Incorrect Bitwise Shift of Integer</td>
+<td>TODO: merge knowledge into 0003 and remove.</td>
+<td><a href="https://cwe.mitre.org/data/definitions/1335.html">CWE-1335</a></td>
+<td>Avoid mixing bitwise shifts with arithmetic operations, instead, use clear mathematical expressions instead to maintain predictable behavior, readability, and compatibility.</td>
+<td>Ensure to know what bit-wise shift operators do in case you can not avoid them as recommended in <em>NUM01-J. Do not perform bitwise and arithmetic operations on the same data</em> <a href="https://wiki.sei.cmu.edu/confluence/display/java/NUM01-J.+Do+not+perform+bitwise+and+arithmetic+operations+on+the+same+data">[SEI CERT JAVA 2024]</a> and use math instead.</td>
 </tr>
 
 <tr>
@@ -158,12 +185,18 @@ TODO: merge 0053 required knowledge into 0003</td>
 </tr>
 
 <tr>
-<td><a href="03_numbers/pyscg-0053/README.md">pyscg-0053</a></td>
-<td>Incorrect Bitwise Shift of Integer</td>
-<td>TODO: merge knowledge into 0003 and remove.</td>
-<td><a href="https://cwe.mitre.org/data/definitions/1335.html">CWE-1335</a></td>
-<td>Avoid mixing bitwise shifts with arithmetic operations, instead, use clear mathematical expressions instead to maintain predictable behavior, readability, and compatibility.</td>
-<td>Ensure to know what bit-wise shift operators do in case you can not avoid them as recommended in <em>NUM01-J. Do not perform bitwise and arithmetic operations on the same data</em> <a href="https://wiki.sei.cmu.edu/confluence/display/java/NUM01-J.+Do+not+perform+bitwise+and+arithmetic+operations+on+the+same+data">[SEI CERT JAVA 2024]</a> and use math instead.</td>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">04 Neutralization</h3>
+</th>
+</tr>
+
+<tr>
+<td><a href=04_neutralization/pyscg-0047/README.md>pyscg-0047</a></td>
+<td>Incomplete List of Disallowed Input</td>
+<td></td>
+<td><a href="https://cwe.mitre.org/data/definitions/184.html">CWE-184</a></td>
+<td>Avoid Incomplete 'deny lists' that can lead to security vulnerabilities such as cross-site scripting (XSS) by using 'allow lists' instead.</td>
+<td></td>
 </tr>
 
 <tr>
@@ -230,12 +263,9 @@ TODO: merge 0053 required knowledge into 0003</td>
 </tr>
 
 <tr>
-<td><a href=04_neutralization/pyscg-0047/README.md>pyscg-0047</a></td>
-<td>Incomplete List of Disallowed Input</td>
-<td></td>
-<td><a href="https://cwe.mitre.org/data/definitions/184.html">CWE-184</a></td>
-<td>Avoid Incomplete 'deny lists' that can lead to security vulnerabilities such as cross-site scripting (XSS) by using 'allow lists' instead.</td>
-<td></td>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">05 Exception handling</h3>
+</th>
 </tr>
 
 <tr>
@@ -293,6 +323,12 @@ TODO: merge 0053 required knowledge into 0003</td>
 </tr>
 
 <tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">06 Logging</h3>
+</th>
+</tr>
+
+<tr>
 <td><a href=06_logging/pyscg-0019/README.md>pyscg-0019</a></td>
 <td>Insertion of Sensitive Information into Log File</td>
 <td></td>
@@ -335,6 +371,12 @@ TODO: merge 0053 required knowledge into 0003</td>
 <td><a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209</a></td>
 <td>Prevent an attacker from discovering internal or sensitive system information by filtering, splitting and applying brute force prevention tactics when displaying error messages to a user.</td>
 <td>This rule is closely related to <a href="../pyscg-0019/README.md">pyscg-0019: Insertion of Sensitive Information into Log File</a>.</td>
+</tr>
+
+<tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">07 Concurrency</h3>
+</th>
 </tr>
 
 <tr>
@@ -419,6 +461,12 @@ TODO: merge 0053 required knowledge into 0003</td>
 </tr>
 
 <tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">08 Coding Standards</h3>
+</th>
+</tr>
+
+<tr>
 <td><a href=08_coding_standards/pyscg-0031/README.md>pyscg-0031</a></td>
 <td>Loop Condition Value Update Within the Loop</td>
 <td></td>
@@ -479,6 +527,12 @@ TODO: merge 0053 required knowledge into 0003</td>
 <td><a href="https://cwe.mitre.org/data/definitions/617.html">CWE-617</a></td>
 <td>Assertions are a useful developer tool, but they cannot be relied upon to be present in a production environment. Incorrect function arguments should be handled by an appropriate exception.</td>
 <td>Python removes assertions when a script is run with the <code>-O</code>  and <code>-OO</code> options <a href="https://docs.python.org/3.9/using/cmdline.html?highlight=pythonoptimize#cmdoption-o">[Python 3.9 Documentation]</a>. The <code>-O</code> options is for optimisation. It removes asserts statements from bytecode, removes docstrings from functions/classes and sets <code>__debug__</code> to False. It is used for slightly faster execution and smaller bytecode files. <code>-OO</code> does everything that <code>-O</code>does but it additionally removes module-level docstrings and creates an even more compact bytecode.</td>
+</tr>
+
+<tr>
+<th colspan="6" style="text-align: left; padding: 10px;">
+<h3 style="margin: 0;">09 Cryptography</h3>
+</th>
 </tr>
 
 <tr>
