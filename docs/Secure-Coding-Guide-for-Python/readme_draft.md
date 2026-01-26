@@ -100,7 +100,7 @@ change CWE to CWE-176: Improper Handling of Unicode Encoding</td>
 <td>Merge knowledge into into 0045</td>
 <td><a href="https://cwe.mitre.org/data/definitions/838.html">CWE-838</a></td>
 <td>Inappropriate handling of an encoding from untrusted sources or unexpected encoding can lead to unexpected values, data loss, or become the root cause of an attack.</td>
-<td>Mixed encoding can lead to unexpected results and become a root cause for attacks as showcased in <a href="02_encoding_and_strings/pyscg-0044/README.md">pyscg-0044: Incorrect Behavior Order: Validate Before Canonicalize</a> and <a href="../pyscg-0043/README.md">pyscg-0043: Improper Handling Of Mixed Encoding</a> This rule showcases capturing the root cause by untrusted source its original binary without compromising the logging system for forensics.</td>
+<td>Mixed encoding can lead to unexpected results and become a root cause for attacks as showcased in <a href="02_encoding_and_strings/pyscg-0044/README.md">pyscg-0044: Incorrect Behavior Order: Validate Before Canonicalize</a> and <a href="02_encoding_and_strings/pyscg-0043/README.md">pyscg-0043: Improper Handling Of Mixed Encoding</a> This rule showcases capturing the root cause by untrusted source its original binary without compromising the logging system for forensics.</td>
 </tr>
 
 <tr>
@@ -154,13 +154,14 @@ TODO: merge 0053 required knowledge into 0003</td>
 <td>Use Integer Loop Counters</td>
 <td><a href="https://cwe.mitre.org/data/definitions/197.html">CWE-197</a></td>
 <td>Ensure to have predictable outcomes in loops by using int instead of <code>float</code> variables as a counter.</td>
-<td>Floating-point arithmetic can only represent a finite subset of real numbers <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8766229">[IEEE Std 754-2019]</a>, such as <code>0.555....</code> represented by <code>0.5555555555555556</code> also discussed in <a href="../pyscg-0001/README.md">pyscg-0001: Insufficient Precision Or Accuracy Of A Real Number</a>. Code examples in this rule are based on [Albing and Vossen, 2017].</td>
+<td>Floating-point arithmetic can only represent a finite subset of real numbers <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8766229">[IEEE Std 754-2019]</a>, such as <code>0.555....</code> represented by <code>0.5555555555555556</code> also discussed in <a href="03_numbers/pyscg-0001/README.md">pyscg-0001: Insufficient Precision Or Accuracy Of A Real Number</a>. Code examples in this rule are based on [Albing and Vossen, 2017].</td>
 </tr>
 
 <tr>
 <td><a href="03_numbers/pyscg-0005/README.md">pyscg-0005</a></td>
 <td>Control Rounding When Converting to Less Precise Numbers</td>
-<td></td>
+<td>Specify Rounding for Numeric Conversions<br><br>
+<b>TODO:</b> also create a invstigative issue on differnt types of roundings other then numberic.</b></td>
 <td><a href="https://cwe.mitre.org/data/definitions/197.html">CWE-197</a></td>
 <td>While defensive coding requires enforcing types, it is important to make conscious design decisions on how conversions are rounded.</td>
 <td>The <code>example01.py</code> code demonstrates how <code>int()</code> behaves differently to <code>round()</code>.</td>
@@ -169,7 +170,9 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href="03_numbers/pyscg-0006/README.md">pyscg-0006</a></td>
 <td>Incorrect Conversion Between Numeric Types</td>
-<td></td>
+<td>Use an Appropriate Comparitor for Numbers<br><br>
+<b>TODO:</b> change first sentence to:"Use the appropriate numeric type/module (decimal, fractions, math.isclose()) instead of string comparators.
+"</td>
 <td><a href="https://cwe.mitre.org/data/definitions/681.html">CWE-681</a></td>
 <td>String representations of floating-point numbers must not be compared or inspected outside of specialized modules such as <code>decimal</code> or <code>math</code>.</td>
 <td>For example, a <code>Decimal</code> object must be created from a <code>string</code>, but it is inaccurate to use the string representation of a floating-point number outside of <code>Decimal</code>. The <code>Decimal</code> module provides a <code>compare()</code> method that allows the calculation to stay within its configured precision.</td>
@@ -178,7 +181,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href="03_numbers/pyscg-0007/README.md">pyscg-0007</a></td>
 <td>Avoid an Uncontrolled Loss of Precision When Passing Floating-point Literals to a Decimal Constructor</td>
-<td></td>
+<td>Use String Literals for Decimal Construction</td>
 <td><a href="https://cwe.mitre.org/data/definitions/681.html">CWE-681</a></td>
 <td>When working with decimal numbers in Python, using floating-point literals as input to the <code>Decimal</code> constructor can lead to unintended imprecision due to the limitations of <code>IEEE 754</code> <a href="https://en.wikipedia.org/wiki/IEEE_754">Wikipedia 2025</a> floating-point representation; therefore, to ensure accurate decimal representation, it is advisable to avoid using floating-point literals.</td>
 <td></td>
@@ -232,7 +235,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <td></td>
 <td><a href="https://cwe.mitre.org/data/definitions/843.html">CWE-843</a></td>
 <td>When operating on unsigned values coming from external sources, such as <code>C</code> or <code>C++</code> applications, they should be unpacked using variable types that can represent their entire value range.</td>
-<td>This rule is related to <a href="../../03_numbers/pyscg-0005/README.md">pyscg-0005: Control Rounding When Converting to Less Precise Numbers</a>.</td>
+<td>This rule is related to <a href="03_numbers/pyscg-0005/README.md">pyscg-0005: Control Rounding When Converting to Less Precise Numbers</a>.</td>
 </tr>
 
 <tr>
@@ -370,7 +373,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <td></td>
 <td><a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209</a></td>
 <td>Prevent an attacker from discovering internal or sensitive system information by filtering, splitting and applying brute force prevention tactics when displaying error messages to a user.</td>
-<td>This rule is closely related to <a href="../pyscg-0019/README.md">pyscg-0019: Insertion of Sensitive Information into Log File</a>.</td>
+<td>This rule is closely related to <a href="06_logging/pyscg-0019/README.md">pyscg-0019: Insertion of Sensitive Information into Log File</a>.</td>
 </tr>
 
 <tr>
@@ -552,3 +555,4 @@ TODO: merge 0053 required knowledge into 0003</td>
 - The "New Title" column is left empty for future title revisions
 - First sentences and paragraphs are extracted directly from each rule's README.md file
 - Rules are organized by sections: Introduction (01), Encoding/Strings (02), Numbers (03), Neutralization (04), Exception Handling (05), Logging (06), Concurrency (07), Coding Standards (08), and Cryptography (09)
+- 
