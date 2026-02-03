@@ -42,7 +42,7 @@ Create isolated trust zones on the operating system level.
 <tr>
 <td><a href="01_introduction/pyscg-0042/README.md">pyscg-0042</a></td>
 <td>Operator Precedence Logic Error</td>
-<td></td>
+<td>Ensure Correct Operator Precedence</td>
 <td><a href="https://cwe.mitre.org/data/definitions/783.html">CWE-783</a></td>
 <td>Failing to understand the order of precedence in expressions that read and write to the same object can lead to unintended side effects.</td>
 <td>Python has distinct different concepts for:</td>
@@ -196,7 +196,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=04_neutralization/pyscg-0047/README.md>pyscg-0047</a></td>
 <td>Incomplete List of Disallowed Input</td>
-<td></td>
+<td>Use Allow Lists Over Deny Lists</td>
 <td><a href="https://cwe.mitre.org/data/definitions/184.html">CWE-184</a></td>
 <td>Avoid Incomplete 'deny lists' that can lead to security vulnerabilities such as cross-site scripting (XSS) by using 'allow lists' instead.</td>
 <td></td>
@@ -205,7 +205,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href="04_neutralization/pyscg-0008/README.md">pyscg-0008</a></td>
 <td>Use of Externally-Controlled Format String</td>
-<td></td>
+<td>Prevent Format String Injection</td>
 <td><a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a></td>
 <td>Ensure that all format string functions are passed a static string which cannot be controlled by the user <a href="https://cwe.mitre.org/data/definitions/134.html">[MITRE 2023]</a></td>
 <td>In Python, the use of string formatting combined with the ability to access a function's <code>__globals__</code> attribute can expose internal variables and methods unless properly guarded.</td>
@@ -214,7 +214,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href="04_neutralization/pyscg-0009/README.md">pyscg-0009</a></td>
 <td>Improper Neutralization of Special Elements Used in an OS Command ('OS Command Injection')</td>
-<td></td>
+<td>Prevent OS Command Injection</td>
 <td><a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78</a></td>
 <td>Avoid input from untrusted sources to be used directly as part of an OS command and use specialized Python modules where possible instead.</td>
 <td>Python can run shell commands either with an active <code>shell=True</code> where an actual shell is invoked to run a line of commands such <code>/bin/bash -c "ls -la *.txt"</code> or via non-interactive <code>shell=False</code> expecting a Python list object.</td>
