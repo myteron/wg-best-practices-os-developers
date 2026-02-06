@@ -223,7 +223,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=04_neutralization/pyscg-0010/README.md>pyscg-0010</a></td>
 <td>Improper Neutralization of Special Elements Used in an SQL Command ('SQL Injection')</td>
-<td></td>
+<td>Prevent SQL Injection</td>
 <td><a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89</a></td>
 <td>To prevent SQL injections, use input sanitization and parameterized queries instead of <code>executescript()</code>.</td>
 <td>Combining an SQL query with data from lesser trusted sources, such as fields from a web form used to sign up new clients, can allow an attacker to inject malicious SQL statements.</td>
@@ -232,7 +232,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=04_neutralization/pyscg-0011/README.md>pyscg-0011</a></td>
 <td>Access of Resource Using Incompatible Type ('Type Confusion')</td>
-<td></td>
+<td>Prevent Type Confusion<br><br><b>TODO: </b>Create issue (bug) that corrects the code examples for non-compliant and compliant code</td>
 <td><a href="https://cwe.mitre.org/data/definitions/843.html">CWE-843</a></td>
 <td>When operating on unsigned values coming from external sources, such as <code>C</code> or <code>C++</code> applications, they should be unpacked using variable types that can represent their entire value range.</td>
 <td>This rule is related to <a href="03_numbers/pyscg-0005/README.md">pyscg-0005: Control Rounding When Converting to Less Precise Numbers</a>.</td>
