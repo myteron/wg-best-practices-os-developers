@@ -83,27 +83,21 @@ It is __not production code__ and requires code-style or python best practices t
 </tr>
 
 <tr>
-<td><a href="02_encoding_and_strings/pyscg-0043/README.md">pyscg-0043: Improper Handling of Mixed Encoding</a></td>
+<td><a href="02_encoding_and_strings/pyscg-0043/README.md">pyscg-0043: Specify Locale Explicitly</a></td>
 <td></td>
 <td><a href="https://cwe.mitre.org/data/definitions/175.html">CWE-175</a></td>
 </tr>
 
 <tr>
-<td><a href="02_encoding_and_strings/pyscg-0044/README.md">pyscg-0044: Incorrect Behavior Order: Validate Before Canonicalize</a></td>
+<td><a href="02_encoding_and_strings/pyscg-0044/README.md">pyscg-0044: Canonicalize Input Before Validating</a></td>
 <td><a href="https://www.cvedetails.com/cve/CVE-2022-26136/">CVE-2022-26136</a>,<br>CVSSv3.1: <strong style='color:red'>9.8</strong>,<br>EPSS: <strong>00.28</strong> (31.12.2025)</td>
 <td><a href="https://cwe.mitre.org/data/definitions/180.html">CWE-180</a></td>
 </tr>
 
 <tr>
-<td><a href="02_encoding_and_strings/pyscg-0045/README.md">pyscg-0045: Collapse of Data into Unsafe Value</a></td>
+<td><a href="02_encoding_and_strings/pyscg-0045/README.md">pyscg-0045: Enforce Consistent Encoding</a></td>
 <td></td>
-<td><a href="https://cwe.mitre.org/data/definitions/182.html">CWE-182</a></td>
-</tr>
-
-<tr>
-<td><a href="02_encoding_and_strings/pyscg-0046/README.md">pyscg-0046: Inappropriate Encoding for Output Context</a></td>
-<td></td>
-<td><a href="https://cwe.mitre.org/data/definitions/838.html">CWE-838</a></td>
+<td><a href="https://cwe.mitre.org/data/definitions/176.html">CWE-176</a></td>
 </tr>
 
 <tr>
@@ -423,6 +417,24 @@ It is __not production code__ and requires code-style or python best practices t
 |\[OWASP 2021\]|OWASP Top 10 Report 2021 \[online\], available from [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/)|
 |\[MITRE Pillar 2024\]|_Pillar Weakness_ \[online\], available form [https://cwe.mitre.org/documents/glossary/#Pillar%20Weakness](https://cwe.mitre.org/documents/glossary/#Pillar%20Weakness) \[accessed Dec 2024\]|
 |\[MITRE 2024\]|CWE Top 25 \[online\], available form [https://cwe.mitre.org/top25/index.html](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html) \[accessed Dec 2024\]|
+
+## Contributors
+
+This guide was jointly developed by the following group of awesome contributors:
+
+* Andrew Costello
+* Bartlomiej Karas
+* David A. Wheeler
+* Dean Wiley
+* Georg Kunz
+* Helge Wehder
+* Hubert Daniszewski
+* Ketki Davda
+* Kyrylo Yatsenko
+* Michael Scovetta
+* Noah Spahn
+* Tom McDermott
+* Viktor Szépe
 
 ## License
 
