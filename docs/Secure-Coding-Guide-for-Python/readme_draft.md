@@ -21,11 +21,11 @@ This table provides an overview of all pyscg rules with their current titles, sp
 <tr>
 <td><a href="01_introduction/pyscg-0040/README.md">pyscg-0040</a></td>
 <td>Trust Boundary Violation</td>
-<td>Use Process Isolation for Trust Zones</td>
+<td>Use Process Isolation for Trust Zones<br><br>
+<b>TODO replace first sentence to:</b><br>
+Create isolated trust zones on the operating system level.</td>
 <td><a href="https://cwe.mitre.org/data/definitions/501.html">CWE-501</a></td>
 <td>Python's trust boundaries rely on explicit process isolation, rather than in-process access control within a single interpreter.<br>
-<b>Change to:</b><br>
-Create isolated trust zones on the operating system level.
 </td>
 <td>Unlike Java, where we have in-process mechanisms like <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.3/aiaag/introducing-oracle-access-management.html">Oracle Access Management</a> that can enforce access boundaries inside the same runtime, standard Python does not provide a built-in in-process access manager. In Python we need to implement different trust zones by starting python runtimes with individual POSIX/Machine users. The POSIX/Machine user access rights must be set in accordance to level of trust per zone.</td>
 </tr>
@@ -241,7 +241,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=04_neutralization/pyscg-0012/README.md>pyscg-0012</a></td>
 <td>Improper Handling of Highly Compressed Data ('Data Amplification')</td>
-<td></td>
+<td>Extract Archives Safely</td>
 <td><a href="https://cwe.mitre.org/data/definitions/409.html">CWE-409</a></td>
 <td>Prevent slip and bomb attacks when decompressing and unpacking compressed data such as <code>ZIP</code>, <code>TAR.GZ</code>, <code>JAR</code>, <code>WAR</code>, <code>RPM</code>  or <code>DOCX</code>.</td>
 <td>Zip is used reprehensively in this rule for all compression formats.</td>
@@ -250,7 +250,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=04_neutralization/pyscg-0013/README.md>pyscg-0013</a></td>
 <td>Untrusted Search Path</td>
-<td></td>
+<td>Secure Search Paths<br><br><b>TODO:</b> create issue to explain 'search path' at the start<br></td>
 <td><a href="https://cwe.mitre.org/data/definitions/426.html">CWE-426</a></td>
 <td>In an environment where an untrusted or less trusted entity can modify the environment variables, consider validating hash-based byte code [Python 2023 Command line and environment].</td>
 <td>Python source code <code>.py</code> files need to be converted into "byte code" <code>.pyc</code> or <code>.pyo</code> in memory or in a filesystem <code>__pycache__</code> before running on the Python Virtual Machine (PVM) [Dec 2009 PEP 3147].</td>
@@ -259,7 +259,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=04_neutralization/pyscg-0023/README.md>pyscg-0023</a></td>
 <td>Deserialization of Untrusted Data</td>
-<td></td>
+<td>Secure Deserialization</td>
 <td><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502</a></td>
 <td>Even if data has been created from a trusted source, we need to verify that it has not been tampered with during transport.</td>
 <td>The <code>pickle</code> module is known to be vulnerable <a href="https://docs.python.org/3.9/library/pickle.html">[docs.python.org 2023]</a> against unwanted code execution during deserialization and should only be used if there is no architectural text-based alternative.</td>
