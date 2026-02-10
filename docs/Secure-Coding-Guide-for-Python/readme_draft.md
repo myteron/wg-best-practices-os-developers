@@ -274,7 +274,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=05_exception_handling/pyscg-0014/README.md>pyscg-0014</a></td>
 <td>Declaration of Throws for Generic Exception</td>
-<td></td>
+<td>Use Specific Exception Types</td>
 <td><a href="https://cwe.mitre.org/data/definitions/397.html">CWE-397</a></td>
 <td>Avoid raising exceptions that aren't informative on specific errors.</td>
 <td><code>Exception</code> is the base class of all non-system-exiting exceptions <a href="https://docs.python.org/3/library/exceptions.html#Exception">[Python docs 2025]</a>. Specific exceptions allow to determine why they were raised and attempt recovery. To catch a generic <code>Exception</code>, you must also account for any more specific exceptions that inherit from it. Raising <code>Exception</code> is likely to hide bugs and and prevents using more specialized except statements. The problem is even more severe when raising <code>BaseException</code>, which additionally includes subclasses signifying termination signals, such as <code>KeyboardInterrupt</code> and <code>SystemExit</code> <a href="https://peps.python.org/pep-0352/#exception-hierarchy-changes">[PEP 2024]</a>.</td>
@@ -283,7 +283,9 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=05_exception_handling/pyscg-0015/README.md>pyscg-0015</a></td>
 <td>Improper Handling of Exceptional Conditions</td>
-<td></td>
+<td>Handle Error Conditions</td>
+<br>
+<b>TODO:</b><br>Change CWE to 390: Detection of Error Condition without action</td>
 <td><a href="https://cwe.mitre.org/data/definitions/755.html">CWE-755</a></td>
 <td>Always catch and explicitly handle exceptions, then respond, log or recover appropriately instead of letting operations fail silently.</td>
 <td>There are two built-in Python modules that allow for file manipulation. The original module is called <code>os</code>. It provides the ability to perform various functions related to the operating system, among which are creating, updating, and deleting files <a href="https://docs.python.org/3/library/os.html">[Python docs - os]</a>. Python 3.4 introduced the <code>pathlib</code>  module, which represents file paths as objects as opposed to string variables <a href="https://docs.python.org/3/library/pathlib.html">[Python docs - pathlib]</a>.</td>
@@ -292,7 +294,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=05_exception_handling/pyscg-0016/README.md>pyscg-0016</a></td>
 <td>Detection of Error Condition Without Action</td>
-<td></td>
+<td>Propagate Exceptions and Preserve Context<br><b>TODO:</b><br><br>Merge non-compliant and compliant code into pyscg-0016<br>Find a better fitting CWE or remove<br>create issue to come up with new noncompliant and compliant code examples</td>
 <td><a href="https://cwe.mitre.org/data/definitions/390.html">CWE-390</a></td>
 <td>Allow exceptions to bubble up and handle exceptions at the right level in the stack.</td>
 <td>Each <code>except</code> block must ensure that the program continues only with formally specified behavior by either:</td>
@@ -301,7 +303,7 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=05_exception_handling/pyscg-0017/README.md>pyscg-0017</a></td>
 <td>Improper Handling of Missing Values</td>
-<td></td>
+<td><b>TODO:</b><br><br>fix numberic typo<br>merge code examples into 0018 and remove 0017</td>
 <td><a href="https://cwe.mitre.org/data/definitions/230.html">CWE-230</a></td>
 <td>Detect and handle missing numberic values explicitly, either by removing, validating or converting them, before performing comparisons, sorting, or statistics, in order to avoid surprising or undefined behaviour.</td>
 <td>The <code>NaN</code> value should be stripped before as they can cause surprising or undefined behaviours in the statistics functions that sort or count occurrences <a href="https://docs.python.org/3/library/statistics.html">[2024 doc.python.org]</a>.</td>
@@ -310,10 +312,21 @@ TODO: merge 0053 required knowledge into 0003</td>
 <tr>
 <td><a href=05_exception_handling/pyscg-0018/README.md>pyscg-0018</a></td>
 <td>Improper Check for Unusual or Exceptional Conditions - Float</td>
-<td></td>
+<td>Validate Numeric Data Beyond Type Checking<br><br>
+<b>TODO:<br></b>0017 to be merged into 0018<br>
+0018 to be moved into 03_numbers<br>
+verify CWE matches.<br>
+</td>
 <td><a href="https://cwe.mitre.org/data/definitions/754.html">CWE-754</a></td>
 <td>Ensure to have handling for exceptional floating-point values.</td>
-<td>The <code>float</code> class has the capability to interpret various input values as floating-point numbers. Some special cases can interpret input values as</td>
+<td>The <code>float</code> class has the capability to interpret various input values as floating-point numbers. Some special cases can interpret input values as
+<ul>
+<li>Positive Infinity</li>
+<li>Negative Infinity</li>
+<li><code>NaN</code> (Not-a-Number)</li>
+</ul>
+
+These floating-point class values represent numbers that fall outside the typical range and exhibit unique behaviors. `NaN` (Not a Number) lacks a defined order and is not considered equal to any value, including itself. Hence, evaluating an expression such as `NaN == NaN` returns `False`.</td>
 </tr>
 
 <tr>
