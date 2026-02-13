@@ -334,18 +334,14 @@ These floating-point class values represent numbers that fall outside the typica
 <td><a href="https://cwe.mitre.org/data/definitions/460.html">CWE-460</a></td>
 <td><a href=05_exception_handling/pyscg-0052/README.md>pyscg-0052</a></td>
 <td>Improper Cleanup on Thrown Exception<br><br>
-<b>Options:</b>
-<ul>
-<li>Clean Up on Exceptions</li>
-<li>Ensure Resource Cleanup</li>
-<li>Ensure Cleanup on Exceptions</li>
-<li><i>Restore State and Release Resources on Exceptions</i></li>
-<li><i><b>Ensure Proper Cleanup on Exceptions</b></i></li>
-<li><i>Maintain Consistent State When Exceptions Occur</i></li>
-<li><i>Clean Up Resources and State on Exceptions</i></li>
-</ul>
+
 </td>
-<td></td>
+<td>
+Ensure Cleanup on Exceptions<br><br>
+<b>TODO:</b><br>Create issue. Check code examples so they cover 'state' related issues, consider using 'with:' in a new example.<br>
+Check if code is better suited in one of the concurrent processing rules.
+
+</td>
 <td>Make sure that your code fully and correctly cleans up its state whenever an exception occurs to avoid unexpected state or control flow.</td>
 <td>Often, when functions or loops become complicated, some level of resource cleanup is needed throughout execution.</td>
 </tr>
@@ -360,21 +356,10 @@ These floating-point class values represent numbers that fall outside the typica
 <td><a href="https://cwe.mitre.org/data/definitions/532.html">CWE-532</a></td>
 <td><a href=06_logging/pyscg-0019/README.md>pyscg-0019</a></td>
 <td>Insertion of Sensitive Information into Log File<br><br>
-<b>Options:</b>
-<ul>
-<li>Avoid Sensitive Data in Logs</li>
-<li>Do Not Log Sensitive Data</li>
-<li>Sanitize Log Content</li>
-<li>Neutralize Log Content</li>
-<li>Neutralize Log Output</li>
-<li><i>Protect Sensitive Information in Logs</i></li>
-<li><i>Control Access to Sensitive Log Data</i></li>
-<li><i>Encrypt or Exclude Sensitive Information From Logs</i></li>
-<li><i><b>Exclude Sensitive Data From Logs</b></i></li>
-</ul>
-
 </td>
-<td><b>TODO:</b><br>
+<td>
+Exclude Sensitive Data From Logs<br><br>
+<b>TODO:</b><br>
 Remove "plain text" from first sentence</td>
 <td>Do not log any sensitive information such as passwords or credit card numbers. Encrypt or anonymize personal information such as user names, and date of birth in plain text.</td>
 <td>Logging is crucial for tasks like debugging, forensic analysis, and the general management of various incidents, however, it poses significant challenges when it comes to personal information and sensitive information.</td>
@@ -384,21 +369,12 @@ Remove "plain text" from first sentence</td>
 <td><a href="https://cwe.mitre.org/data/definitions/778.html">CWE-778</a></td>
 <td><a href=06_logging/pyscg-0020/README.md>pyscg-0020</a></td>
 <td>Insufficient Logging<br><br>
-<b>Options:</b>
-<ul>
-<li>Ensure Sufficient Logging</li>
-<li>Implement Comprehensive Logging</li>
-<li>Implement Sufficient Logging</li>
-<li>Ensure Sufficient Security Event Logging</li>
-<li><i>Log Security Events Properly</i></li>
-<li><i><b>Implement Adequate Security Logging</b></i></li>
-<li><i>Use Centralized Logging for Security Events</i></li>
-<li><i>Ensure Complete Security Event Logging</i></li>
-</ul>
-
 </td>
-<td><b>TODO:</b><br>
-Make first sentence more specific about security events. Suggested: "Log security events such as authentication attempts, authorization failures, and data access to support incident response."</td>
+<td>Implement Informative Event Logging<br><br>
+
+<b>TODO:</b><br>
+Add findings to the existing issue on logging, add suggested first sentence "Log security events such as authentication attempts, authorization failures, and data access to support incident response."
+</td>
 <td>Ensure you have sufficient logging in order to adequately record important events within an application and/or system.</td>
 <td>Without comprehensive and sufficient logging, it becomes challenging to identify and respond to security incidents, leading to delayed and/or inefficient incident response efforts.</td>
 </tr>
@@ -407,19 +383,12 @@ Make first sentence more specific about security events. Suggested: "Log securit
 <td><a href="https://cwe.mitre.org/data/definitions/489.html">CWE-489</a></td>
 <td><a href=06_logging/pyscg-0021/README.md>pyscg-0021</a></td>
 <td>Active Debug Code<br><br>
-<b>Options:</b>
-<ul>
-<li>Remove Debug Code</li>
-<li>Clean Production Code</li>
-<li>Disable Debug Features in Production</li>
-<li><i><b>Exclude Design Tooling From Production Packages</b></i></li>
-<li><i>Separate Design Tooling From Production Code</i></li>
-<li><i>Package Design Tools Separately From Production</i></li>
-<li><i>Keep Test and Debug Tools Out of Production</i></li>
-</ul>
-
 </td>
-<td></td>
+<td>Exclude Developer Tools From the Final Product<br><br>
+
+<b>TODO:</b><br><br>
+Ensure we have an issue on the backlog that adds code examples to 0021
+</td>
 <td>Keep design tooling in separate packages from the actual product and supply useful logging.</td>
 <td>Design tooling for functional tests, performance tests, or troubleshooting increases the attackable surface making a product more vulnerable <a href="https://cwe.mitre.org/data/definitions/489.html">[MITRE 2023]</a>. A need to include them in a final product typically originates from missing the concept of staged testing with separate packaging of the product and required design tooling. Designers only using high privileged users for troubleshooting is often the root cause for badly designed logging that forces the operator to also use highly privileged or shared accounts in production.</td>
 </tr>
@@ -791,4 +760,3 @@ First sentence should explain the problem/risk, not the implementation. Suggeste
 - The "New Title" column is left empty for future title revisions
 - First sentences and paragraphs are extracted directly from each rule's README.md file
 - Rules are organized by sections: Introduction (01), Encoding/Strings (02), Numbers (03), Neutralization (04), Exception Handling (05), Logging (06), Concurrency (07), Coding Standards (08), and Cryptography (09)
-- 
