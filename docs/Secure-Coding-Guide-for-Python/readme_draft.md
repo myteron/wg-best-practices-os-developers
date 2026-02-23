@@ -396,21 +396,8 @@ Ensure we have an issue on the backlog that adds code examples to 0021
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117</a></td>
 <td><a href=06_logging/pyscg-0022/README.md>pyscg-0022</a></td>
-<td>Improper Output Neutralization for Logs<br><br>
-<b>Options:</b>
-<ul>
-<li>Neutralize Log Output</li>
-<li>Sanitize Log Output</li>
-<li>Mitigate Log Injection (This one is specifically about that?)</li>
-<li>Neutralize Untrusted Data in Logs</li>
-<li><i>Validate and Neutralize Data Before Logging</i></li>
-<li><i><b>Prevent Log Injection Attacks</b></i></li>
-<li><i>Sanitize Untrusted Data Before Logging</i></li>
-<li><i>Neutralize CRLF Sequences in Log Output</i></li>
-</ul>
-
-</td>
-<td></td>
+<td>Improper Output Neutralization for Logs</td>
+<td>Neutralize Untrusted Data in Logs</td>
 <td>Ensure all untrusted data is properly neutralized or sanitized before writing to application logs.</td>
 <td>Log injection occurs when untrusted data is written to application logs without proper neutralization, allowing attackers to forge log entries or inject malicious content. Attackers can inject fake log records or hide real ones by inserting newline sequences (<code>\r</code> or <code>\n</code>), misleading auditors and incident-response teams. This vulnerability can also enable injection of XSS attacks when logs are viewed in vulnerable web applications.</td>
 </tr>
@@ -418,21 +405,8 @@ Ensure we have an issue on the backlog that adds code examples to 0021
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209</a></td>
 <td><a href=06_logging/pyscg-0050/README.md>pyscg-0050</a></td>
-<td>Generation of Error Message Containing Sensitive Information<br><br>
-<b>Options:</b>
-<ul>
-<li>Avoid Sensitive Error Messages</li>
-<li><b>Prevent Sensitive Data in Error Messages</b></li>
-<li>Use Generic Error Messages</li>
-<li>Return Generic Errors to Users and Log Details Separately</li>
-<li><i>Sanitize Error Messages at Trust Boundaries</i></li>
-<li><i>Return Generic Errors to Clients</i></li>
-<li><i>Filter Sensitive Data From Client-Facing Errors</i></li>
-<li><i>Prevent System Information Disclosure in Error Messages</i></li>
-</ul>
-
-</td>
-<td></td>
+<td>Generation of Error Message Containing Sensitive Information</td>
+<td>Sanitize Error Output to Prevent Information Disclosure</td>
 <td>Prevent an attacker from discovering internal or sensitive system information by filtering, splitting and applying brute force prevention tactics when displaying error messages to a user.</td>
 <td>This rule is closely related to <a href="06_logging/pyscg-0019/README.md">pyscg-0019: Insertion of Sensitive Information into Log File</a>.</td>
 </tr>
@@ -446,20 +420,11 @@ Ensure we have an issue on the backlog that adds code examples to 0021
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400</a></td>
 <td><a href=07_concurrency/pyscg-0024/README.md>pyscg-0024</a></td>
-<td>Uncontrolled Resource Consumption<br><br>
-<b>Options:</b>
-<ul>
-<li>Control Resource Consumption</li>
-<li>Implement Resource Limits</li>
-<li><i>Make Thread Pool Tasks Interruptible</i></li>
-<li><i><b>Ensure Thread Pool Tasks Can Be Interrupted</b></i></li>
-<li><i>Enable Graceful Task Cancellation in Thread Pools</i></li>
-<li><i>Implement Interruptible Thread Pool Tasks</i></li>
-</ul>
+<td>Uncontrolled Resource Consumption</td>
+<td>Ensure Thread Pool Tasks Can Be Interrupted<br><br>
 
-</td>
-<td><b>TODO:</b><br>
-First sentence should explain the problem/risk, not the implementation. Suggested: "Ensure thread pool tasks can be interrupted during execution to prevent resource exhaustion and enable graceful shutdown."</td>
+<b>TODO:</b><br>
+Create issue on: reviewing first sentence and consider linking to CWE-404. First sentence should explain the problem/risk, not the implementation and link up CWE-400 to the example rather then explianing the example implementation. Suggested: "Ensure thread pool tasks can be interrupted during execution to prevent resource exhaustion and enable graceful shutdown."</td>
 <td>Canceling the task in a thread pool only prevents it from being executed if it has not started yet. For the task to be interruptible, it must handle the <code>threading.Event</code> flag.</td>
 <td></td>
 </tr>
@@ -467,16 +432,8 @@ First sentence should explain the problem/risk, not the implementation. Suggeste
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/410.html">CWE-410</a></td>
 <td><a href=07_concurrency/pyscg-0025/README.md>pyscg-0025</a></td>
-<td>Insufficient Resource Pool<br><br>
-<b>Options:</b>
-<ul>
-<li>Size Resource Pools</li>
-<li>Configure Adequate Resource Pools</li>
-<li>Size and Bound Resource Pools</li>
-</ul>
-
-</td>
-<td></td>
+<td>Insufficient Resource Pool</td>
+<td>Configure Adequate Resource Pools</td>
 <td>Ensure load control during traffic bursts or Denial of Service (DoS) by using a limited amount of threads in a pool.</td>
 <td>An attacker can cause a DoS by flooding a system with too many requests. Services with time-consuming, I/O-bound, or session-based sequential execution make limited use of available resources and can be blocked by a single hanging process or by overloading the queue.</td>
 </tr>
@@ -484,16 +441,8 @@ First sentence should explain the problem/risk, not the implementation. Suggeste
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/833.html">CWE-833</a></td>
 <td><a href=07_concurrency/pyscg-0026/README.md>pyscg-0026</a></td>
-<td>Deadlock<br><br>
-<b>Options:</b>
-<ul>
-<li>Prevent Deadlock</li>
-<li>Implement Deadlock Prevention</li>
-<li>Avoid Thread-Starvation Deadlocks in Bounded Thread Pools</li>
-</ul>
-
-</td>
-<td></td>
+<td>Deadlock</td>
+<td>Prevent Deadlocks</td>
 <td>Submitting tasks whose execution is dependent on other tasks submitted to the same <code>ThreadPoolExecutor</code> may result in a <em>thread-starvation</em> deadlock.</td>
 <td>The number of threads that can simultaneously run within a <code>ThreadPoolExecutor</code> is limited by the <code>_max_workers</code> parameter. Since <code>Python 3.8</code>, the default value for <code>max_workers</code> is <code>min(32, os.cpu_count() + 4)</code> <a href="https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor">[Python docs]</a>. An example of this type of deadlock is shown in the following article [Brownlee, 2021], which describes it as "Deadlock 1: Submit and Wait for a Task Within a Task". Submitting a task will add it to an internal <code>ThreadPoolExecutor</code> queue. The task will be removed from the queue when one of the worker threads becomes available, i.e., after finishing its current task. If all workers are busy and all their current tasks are waiting for results from tasks that are waiting in the queue, the program will run indefinitely as no worker will be able to complete its task and take one of the blocking tasks from the queue.</td>
 </tr>
@@ -501,15 +450,8 @@ First sentence should explain the problem/risk, not the implementation. Suggeste
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/362.html">CWE-362</a></td>
 <td><a href=07_concurrency/pyscg-0027/README.md>pyscg-0027</a></td>
-<td>Concurrent Execution Using Shared Resource with Improper Synchronization ('Race Condition')<br><br>
-<b>Options:</b>
-<ul>
-<li>Synchronize Shared Resources</li>
-<li>Implement Proper Synchronization</li>
-</ul>
-
-</td>
-<td></td>
+<td>Concurrent Execution Using Shared Resource with Improper Synchronization ('Race Condition')</td>
+<td>Prevent Race Conditions</td>
 <td>Ensure to implement locking mechanisms when chaining methods in a multithreaded environment to prevent unexpected results.</td>
 <td>Method chaining is a programming technique where multiple methods are called on the same object sequentially, with each method call returning the object itself or another object that supports further method calls.  Objects that return a reference to themselves allow method chaining, which we frequently use when stripping strings of unwanted content:</td>
 </tr>
@@ -518,15 +460,10 @@ First sentence should explain the problem/risk, not the implementation. Suggeste
 <td><a href="https://cwe.mitre.org/data/definitions/584.html">CWE-584</a></td>
 <td><a href=07_concurrency/pyscg-0028/README.md>pyscg-0028</a></td>
 <td>Return inside Finally Block<br><br>
-<b>Options:</b>
-<ul>
-<li>Avoid Returns in Finally</li>
-<li>Structure Finally Blocks Properly</li>
-<li>Do Not Complete Abruptly From Finally Blocks</li>
-</ul>
-
+<td>Preserve Exceptions in Finally Blocks<br><br>
+<b>TODO:</b><br>
+Move to Excpetions section
 </td>
-<td></td>
 <td>Do not use <code>return</code>, <code>break</code> or <code>continue</code> statements in a try-finally block, as the exception will not be processed. The Python documentation <a href="https://docs.python.org/3.9/reference/compound_stmts.html#finally">[Python 3.9]</a> notes, "If the <code>finally</code> clause executes a <a href="https://docs.python.org/3.9/reference/simple_stmts.html#return"><code>return</code></a>, <a href="https://docs.python.org/3.9/reference/simple_stmts.html#break"><code>break</code></a> or <a href="https://docs.python.org/3.9/reference/simple_stmts.html#continue"><code>continue</code></a> statement, the saved exception is discarded."</td>
 <td></td>
 </tr>
