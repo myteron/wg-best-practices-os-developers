@@ -471,50 +471,31 @@ Move to Excpetions section
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/665.html">CWE-665</a></td>
 <td><a href=07_concurrency/pyscg-0029/README.md>pyscg-0029</a></td>
-<td>Improper Initialization<br><br>
-<b>Options:</b>
-<ul>
-<li>Initialize Properly</li>
-<li>Ensure Complete Initialization</li>
-<li>Reinitialize Thread-Local State in Thread Pools</li>
-</ul>
-
-</td>
-<td></td>
+<td>Improper Initialization</td>
+<td>Reinitialize Reused Thread Objects</td>
 <td>Prevent unexpected states by applying correct initialized of local objects as they remain available when a thread's resources are re-used in a thread-pool.</td>
-<td></td>
+<td>The TheadPoolExecutor provides an interface to a thread pool and resources which it reserved from the Operating System (OS). A thread in a thread-pool also known as "workers" can share an instance of a local object without overwriting each other's values inside of it [Python docs 2023].
+
+Thread-local data is data whose values are thread specific. To manage thread-local data, just create an instance of local (or a subclass) and store attributes on it: mydata = threading.local() mydata.x = 1 The instance’s values will be different for separate threads.</td>
 </tr>
 
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/392.html">CWE-392</a></td>
 <td><a href=07_concurrency/pyscg-0030/README.md>pyscg-0030</a></td>
-<td>Missing Report of Error Condition<br><br>
-<b>Options:</b>
-<ul>
-<li>Report Thread Pool Errors</li>
-<li>Report All Error Conditions</li>
-<li>Ensure Thread Pool Tasks Do Not Fail Silently</li>
-</ul>
-
-</td>
-<td></td>
+<td>Missing Report of Error Condition</td>
+<td>Ensure Thread Pool Tasks Do Not Fail Silently</td>
 <td>Failure to provide a mechanism for reporting that tasks in a thread pool failed as a result of an exceptional condition can make it difficult or impossible to diagnose the problem.</td>
-<td></td>
+<td>ThreadPoolExecutor from the concurrent.futures module is used in Python to asynchronously execute callable tasks [Python Docs - concurrent.futures]. The ThreadPoolExecutor suppresses exceptions raised by tasks to ensure that the failure of a task does not result in the failure of a worker thread in the thread pool. Otherwise, worker threads would close whenever an exception is raised, negatively impacting the performance of the ThreadPoolExecutor.</td>
 </tr>
 
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/404.html">CWE-404</a></td>
 <td><a href=07_concurrency/pyscg-0051/README.md>pyscg-0051</a></td>
-<td>Improper Resource Shutdown or Release<br><br>
-<b>Options:</b>
-<ul>
-<li>Release Resources Properly</li>
-<li>Ensure Complete Resource Release</li>
-<li>Release Resources Explicitly</li>
-</ul>
-
+<td>Improper Resource Shutdown or Release</td>
+<td>Release Unused Resources
+<br><b>TODO:</b><br><br>
+Move to section 08_coding_standarts
 </td>
-<td></td>
 <td>Always close resources explicitly and ensure proper cleanup even if an error occurs.</td>
 <td>Improper resource shutdown or release happens when a program allocates a resource, such as a file, socket, or database connection, and fails to release it when finished. Unlike normal objects (like numbers or strings), these resources are tied to the operating system and are not freed automatically by garbage collection. If left open, they can pile up and cause memory leaks, file handle exhaustion, or stalled network connections.</td>
 </tr>
@@ -522,16 +503,12 @@ Move to Excpetions section
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/366.html">CWE-366</a></td>
 <td><a href=07_concurrency/pyscg-0054/README.md>pyscg-0054</a></td>
-<td>Race Condition Within a Thread<br><br>
-<b>Options:</b>
-<ul>
-<li>Prevent Thread Race Conditions</li>
-<li>Implement Thread Safety</li>
-<li>Synchronize Access to Shared Mutable State</li>
-</ul>
-
+<td>Race Condition Within a Thread</td>
+<td><b>TODO:</b><br><br>
+Do a ruff merge into 0027 and then create an issue to clean it up to have distinguishable cases:<br>
+1) Methode chaining <br>
+2) Eval breaking operations <br>
 </td>
-<td></td>
 <td>In multithreaded programming, use synchronization mechanisms, such as locks, to avoid race conditions, which occur when multiple threads access shared resources simultaneously and lead to unpredictable results.</td>
 <td></td>
 </tr>
@@ -545,16 +522,8 @@ Move to Excpetions section
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/1095.html">CWE-1095</a></td>
 <td><a href=08_coding_standards/pyscg-0031/README.md>pyscg-0031</a></td>
-<td>Loop Condition Value Update Within the Loop<br><br>
-<b>Options:</b>
-<ul>
-<li>Avoid Loop Condition Updates</li>
-<li>Iterate Over Copies or New Collections</li>
-<li>Do Not Modify Collections During Iteration.</li>
-</ul>
-
-</td>
-<td></td>
+<td>Loop Condition Value Update Within the Loop</td>
+<td>Use Copies When Modifying Iterables</td>
 <td>Promote predictable and secure <code>for</code> loops by iterating over a copy or new collection item as described in 4.2 <code>for</code> Statements <a href="https://docs.python.org/3.9/tutorial/controlflow.html#for-statements">Python 3.9 2024</a>.</td>
 <td>In-place modification of mutable types such as <code>list</code>, <code>dict</code>, or <code>set</code> that are part of a for loop can result in unpredictable outcomes.</td>
 </tr>
@@ -562,17 +531,8 @@ Move to Excpetions section
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/1109.html">CWE-1109</a></td>
 <td><a href=08_coding_standards/pyscg-0032/README.md>pyscg-0032</a></td>
-<td>Use of Same Variable for Multiple Purposes<br><br>
-<b>Options:</b>
-<ul>
-<li>Use Variables for Single Purpose</li>
-<li>Assign Single Purpose to Variables</li>
-<li>Use Unique Identifier Names</li>
-<li>Avoid Shadowing Built-ins and Standard Library Names</li>
-</ul>
-
-</td>
-<td></td>
+<td>Use of Same Variable for Multiple Purposes
+<td>Avoid Redefining Built-in Functions or Standard Library Identifiers</td>
 <td>Avoid reusing names of variables, functions, classes, built-in functions, packages, or standard Python modules</td>
 <td>Redefining identifiers from <em>The Python Standard Library</em> <a href="https://docs.python.org/3/library/index.html">[Python 2025]</a>, any internals <code>str</code> and <code>os</code> or other parts of the project can result in unexpected behavior and errors. Issues can multiply when identifiers are made global in a project.</td>
 </tr>
@@ -580,16 +540,8 @@ Move to Excpetions section
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/595.html">CWE-595</a></td>
 <td><a href=08_coding_standards/pyscg-0033/README.md>pyscg-0033</a></td>
-<td>Comparison of Object References Instead of Object Contents<br><br>
-<b>Options:</b>
-<ul>
-<li>Compare Object Contents</li>
-<li>Use Content-Based Comparisons</li>
-<li>Compare Object Contents, Not Identities</li>
-</ul>
-
-</td>
-<td></td>
+<td>Comparison of Object References Instead of Object Contents</td>
+<td>Implement Comparisons by Value Rather Than Reference</td>
 <td>Prevent unexpected results by knowing the differences between comparison operators such as <code>==</code> and <code>is</code>.</td>
 <td>In Python, the <code>==</code> operator is implemented by the <code>__eq__</code> method on an object <a href="https://docs.python.org/3/reference/datamodel.html?highlight=__eq__#object.__eq__">[python.org data model 2023]</a>. For built-in types like <code>int</code> and <code>str</code>, the comparison is implemented in the interpreter. The main issue comes when implementing custom classes, where the default implementation compares object references using the <code>is</code> operator. The <code>is</code> operator compares the identities of the objects, equivalent to <code>id(obj1) == id(obj2)</code>.</td>
 </tr>
@@ -604,6 +556,9 @@ Move to Excpetions section
 <li>Validate Object References</li>
 <li>Check for None Before Use</li>
 <li>Ensure that you have a valid object before callings its instance methods.</li>
+<li><i>Do Not Dereference None Values</i></li>
+<li><i>Validate Objects Are Not None Before Use</i></li>
+<li><i>Do Not Access Attributes or Methods on None</i></li>
 </ul>
 
 </td>
