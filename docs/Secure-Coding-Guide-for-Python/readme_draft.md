@@ -338,8 +338,7 @@ These floating-point class values represent numbers that fall outside the typica
 </td>
 <td>
 Ensure Cleanup on Exceptions<br><br>
-<b>TODO:</b><br>Create issue. Check code examples so they cover 'state' related issues, consider using 'with:' in a new example.<br>
-Check if code is better suited in one of the concurrent processing rules.
+<b>TODO:</b><br>Create issue. Check code examples so they cover 'state' related issues (state changes unreversable due to crash). Current code examples would be more suitabel for 0035 but 0035 may already cover what the code example in 0052 is doing. Check if code is better suited in one of the concurrent processing rules.
 
 </td>
 <td>Make sure that your code fully and correctly cleans up its state whenever an exception occurs to avoid unexpected state or control flow.</td>
@@ -549,20 +548,8 @@ Do a ruff merge into 0027 and then create an issue to clean it up to have distin
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/476.html">CWE-476</a></td>
 <td><a href=08_coding_standards/pyscg-0034/README.md>pyscg-0034</a></td>
-<td>NULL Pointer Dereference<br><br>
-<b>Options:</b>
-<ul>
-<li>Check for None Values</li>
-<li>Validate Object References</li>
-<li>Check for None Before Use</li>
-<li>Ensure that you have a valid object before callings its instance methods.</li>
-<li><i>Do Not Dereference None Values</i></li>
-<li><i>Validate Objects Are Not None Before Use</i></li>
-<li><i>Do Not Access Attributes or Methods on None</i></li>
-</ul>
-
-</td>
-<td></td>
+<td>NULL Pointer Dereference</td>
+<td>Check for None Values</td>
 <td>Avoiding NULL Pointer Dereference is crucial for preventing runtime errors, and ensuring that your code executes successfully.</td>
 <td>* Ensure that you have a valid object before callings its instance methods.</td>
 </tr>
@@ -570,17 +557,8 @@ Do a ruff merge into 0027 and then create an issue to clean it up to have distin
 <tr>
 <td><a href="https://cwe.mitre.org/data/definitions/459.html">CWE-459</a></td>
 <td><a href=08_coding_standards/pyscg-0035/README.md>pyscg-0035</a></td>
-<td>Incomplete Cleanup<br><br>
-<b>Options:</b>
-<ul>
-<li>Complete Resource Cleanup</li>
-<li>Ensure Thorough Resource Cleanup</li>
-<li>Remove Temporary Files Before Termination</li>
-<li>Ensure Complete Resource Cleanup After Release (dup of 0051?)</li>
-</ul>
-
-</td>
-<td></td>
+<td>Incomplete Cleanup</td>
+<td>Complete Resource Cleanup</td>
 <td>Leftover temporary files not properly cleaned up after the completion of any script, can lead to resource exhaustion and disable a service.</td>
 <td>Temporary files can be used to store data, either between processes, or to preserve memory. Using temporary files comes with several challenges, we need to ensure that the temporary files are removed before the termination of the process. In the case of the process terminating abnormally, we can't rely on a finally block as it could fail to run. In the case that the program still fails to free up the execution, we need to ensure that the temporary files are created with the correct permissions and in the correct location so the OS can cleanup after the process finishes, while ensuring to restrict access to other processes.</td>
 </tr>
