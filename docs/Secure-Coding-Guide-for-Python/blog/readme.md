@@ -96,47 +96,41 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 
 ### About the Authors
 
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="helge.jpg" alt="Helge" width="100" style="float:left; margin-right:15px;">
-Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children to archive world domination through automation. Long term plans are to create a Wehder death start to allow his kids to have a grand old life.
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="bart.jpg" alt="Bart" width="100" style="float:left; margin-right:15px;">
-Bartlomiej Karas (BartKaras1128) Bartłomiej Karaś (BartKaras1128) is a software engineer and open source contributor with a focus on secure development practices and modern software supply chain resilience. He is actively involved in community-driven initiatives that promote transparency, collaboration, and security across ecosystems. Bartłomiej is particularly interested in automation, CI/CD security, and fostering best practices for developers at all levels.
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="hubert.jpg" alt="Hubert" width="100" style="float:left; margin-right:15px;">
-Hubert Daniszewski (s19110)
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="thomas.jpg" alt="Thomas" width="100" style="float:left; margin-right:15px;">
-Thomas McDermott (tommcd)
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="dean.jpg" alt="Thomas" width="100" style="float:left; margin-right:15px;">
-Dean Wiley (dwiley258)
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="andrew.jpg" alt="Thomas" width="100" style="float:left; margin-right:15px;">
-Andrew Costello (andrew-costello)
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="noah.jpg" alt="Thomas" width="100" style="float:left; margin-right:15px;">
-Noah Span ()
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="david.jpg" alt="Thomas" width="100" style="float:left; margin-right:15px;">
-David Mather (davidmather)
-</div>
-
-<div style="overflow:hidden; margin-bottom:20px;">
-<img align="left" src="georg.jpg" alt="Thomas" width="100" style="float:left; margin-right:15px;">
-Georg Kunz ()
-</div>
+<table>
+<tr>
+<td width="120"><img src="helge.jpg" alt="Helge" width="100"></td>
+<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children to archive world domination through automation. Long term plans are to create a Wehder death start to allow his kids to have a grand old life.</td>
+</tr>
+<tr>
+<td width="120"><img src="bart.jpg" alt="Bart" width="100"></td>
+<td>Bartlomiej Karas (BartKaras1128) Bartłomiej Karaś (BartKaras1128) is a software engineer and open source contributor with a focus on secure development practices and modern software supply chain resilience. He is actively involved in community-driven initiatives that promote transparency, collaboration, and security across ecosystems. Bartłomiej is particularly interested in automation, CI/CD security, and fostering best practices for developers at all levels.</td>
+</tr>
+<tr>
+<td width="120"><img src="hubert.jpg" alt="Hubert" width="100"></td>
+<td>Hubert Daniszewski (s19110)</td>
+</tr>
+<tr>
+<td width="120"><img src="thomas.jpg" alt="Thomas" width="100"></td>
+<td>Thomas McDermott (tommcd)</td>
+</tr>
+<tr>
+<td width="120"><img src="dean.jpg" alt="Dean" width="100"></td>
+<td>Dean Wiley (dwiley258)</td>
+</tr>
+<tr>
+<td width="120"><img src="andrew.jpg" alt="Andrew" width="100"></td>
+<td>Andrew Costello (andrew-costello)</td>
+</tr>
+<tr>
+<td width="120"><img src="noah.jpg" alt="Noah" width="100"></td>
+<td>Noah Span ()</td>
+</tr>
+<tr>
+<td width="120"><img src="david.jpg" alt="David" width="100"></td>
+<td>David Mather (davidmather)</td>
+</tr>
+<tr>
+<td width="120"><img src="georg.jpg" alt="Georg" width="100"></td>
+<td>Georg Kunz ()</td>
+</tr>
+</table>
