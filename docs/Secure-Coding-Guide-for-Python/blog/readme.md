@@ -99,7 +99,7 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 <table>
 <tr>
 <td width="120"><img src="helge.jpg" alt="Helge" width="100"></td>
-<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children to archive world domination through automation. Long term plans are to create a Wehder death start to allow his kids to have a grand old life.</td>
+<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a sunday session in Flann's Ahlone and Inline hockey</td>
 </tr>
 <tr>
 <td width="120"><img src="bart.jpg" alt="Bart" width="100"></td>
