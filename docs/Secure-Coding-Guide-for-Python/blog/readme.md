@@ -4,15 +4,15 @@ By [OpenSSF](https://openssf.org/author/openssf/) · March 2026 · [Blog](https:
 
 ---
 
-*By TODO: fill in full ist of editors*
+*By TODO: fill in full list of editors*
 
-Onboarding new designers requires a learning resource that can act as a baseline of knowledge in secure coding that is independent of specific frameworks.
+Onboarding new developers requires a learning resource that can act as a baseline of knowledge in secure coding that is independent of specific frameworks.
 
 Python is one of the most widely adopted programming languages in the world, powering everything from web applications and data pipelines to AI/ML systems and cloud infrastructure. Yet secure coding resources for Python have historically lagged behind those available for languages like Java, C, and C++. The OpenSSF [Secure Coding Guide for Python](https://best.openssf.org/Secure-Coding-Guide-for-Python/) closes that gap by providing developers with a practical, example-driven resource for writing more secure Python code. The guide covers over 50 rules across 9 sections, each with working code examples that demonstrate both the vulnerability and its mitigation.
 
 ## Why We Built This Guide
 
-Comprehensive secure coding standards have long existed for languages like Java ([SEI CERT Oracle Coding Standard for Java](https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java)), C, and C++. For Python, the available resources were either high-level and language-agnostic, or tied to a single web framework. When onboarding new designers, we needed a baseline of secure coding knowledge that was framework-independent, covered core Python, and could serve as a self-study resource without requiring 40+ hours of training. Nothing like that existed, so we built it ourselves under the OpenSSF Best Practices Working Group.
+Comprehensive secure coding standards have long existed for languages like Java ([SEI CERT Oracle Coding Standard for Java](https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java)), C, and C++. For Python, the available resources were either high-level and language-agnostic, or tied to a single web framework. When onboarding new developers, we needed a baseline of secure coding knowledge that was framework-independent, covered core Python, and could serve as a self-study resource without requiring 40+ hours of training. Nothing like that existed, so we built it ourselves under the OpenSSF Best Practices Working Group.
 
 The result is a guide that focuses on CPython ≥ 3.9 and the standard library, deliberately avoiding dependencies on any specific web framework or third-party module. This keeps the material relevant regardless of which stack a team uses and ensures the secure coding principles transfer across projects.
 
@@ -99,38 +99,38 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 <table>
 <tr>
 <td width="120"><img src="helge.jpg" alt="Helge" width="100"></td>
-<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a sunday session in Flann's Ahlone and Inline hockey</td>
-</tr>
-<tr>
-<td width="120"><img src="bart.jpg" alt="Bart" width="100"></td>
-<td>Bartlomiej Karas (BartKaras1128) Bartłomiej Karaś (BartKaras1128) is a software engineer and open source contributor with a focus on secure development practices and modern software supply chain resilience. He is actively involved in community-driven initiatives that promote transparency, collaboration, and security across ecosystems. Bartłomiej is particularly interested in automation, CI/CD security, and fostering best practices for developers at all levels.</td>
-</tr>
-<tr>
-<td width="120"><img src="hubert.jpg" alt="Hubert" width="100"></td>
-<td>Hubert Daniszewski (s19110)</td>
+<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann's Ahlone and Inline hockey</td>
 </tr>
 <tr>
 <td width="120"><img src="thomas.jpg" alt="Thomas" width="100"></td>
-<td>Thomas McDermott (tommcd)</td>
+<td>Thomas McDermott (tommcd) is a Senior Engineer at Ericsson, where he works as a software engineer with a particular interest in secure coding. He works extensively with Python and Java, with a particular interest in data analysis and Markdown- and notebook-based workflows, and he follows developments in AI-assisted engineering tooling. Before moving into software engineering 14 years ago, Thomas spent earlier parts of his career as a researcher and lecturer in Chemical Engineering and as a design engineer in the energy sector, though a long-standing love of coding (Fortran, C, Python, Mathematica, and Bash since the mid-1990s) eventually won out. He holds a PhD in Chemical Engineering from University College Dublin and an MSc in Applied Software Development, and his research background in molecular simulation and statistical mechanics continues to inform his analytical approach to software engineering and security.</td>
+</tr>
+<tr>
+<td width="120"><img src="hubert.jpg" alt="Hubert" width="100"></td>
+<td>Hubert Daniszewski (s19110) is a Java and Python software developer with over five years of experience writing, maintaining, and debugging code in both languages. A former Security Master at TietoEvry, he continues to expand his expertise in secure coding and applies it in practice. He was one of the first contributors to the Secure Coding for Python project, where he reviewed and authored rules, particularly in the area of concurrency.</td>
+</tr>
+<tr>
+<td width="120"><img src="bart.jpg" alt="Bart" width="100"></td>
+<td>Bartlomiej Karas (BartKaras1128) is a software engineer and open source contributor with a focus on secure development practices and modern software supply chain resilience. He is actively involved in community-driven initiatives that promote transparency, collaboration, and security across ecosystems. Bartłomiej is particularly interested in automation, CI/CD security, and fostering best practices for developers at all levels.</td>
+</tr>
+<tr>
+<td width="120"><img src="andrew.jpg" alt="Andrew" width="100"></td>
+<td>Andrew Costello (andrew-costello) is a Computer Science graduate with a focus on cybersecurity and software engineering. His work centres on practical system design, including machine learning-based malware analysis, and he also works on tools, cars, small engines, and farming, reflecting a strong hands-on engineering mindset. He is particularly interested in building secure, efficient systems that perform reliably in real-world conditions.</td>
 </tr>
 <tr>
 <td width="120"><img src="dean.jpg" alt="Dean" width="100"></td>
 <td>Dean Wiley (dwiley258)</td>
 </tr>
 <tr>
-<td width="120"><img src="andrew.jpg" alt="Andrew" width="100"></td>
-<td>Andrew Costello (andrew-costello)</td>
+<td width="120"><img src="georg.jpg" alt="Georg" width="100"></td>
+<td>Georg Kunz (gkunz) is a passionate advocate for open source software and a long term contributor to a wide range of open source projects and communities. He currently serves on the Technical Advisory Council (TAC) and the Governing Board of the Open Source Security Foundation (OpenSSF), co-chairs the OpenSSF Best Practices Working Group, and is a member of the TODO Group's Steering Committee.</td>
 </tr>
 <tr>
 <td width="120"><img src="noah.jpg" alt="Noah" width="100"></td>
-<td>Noah Span ()</td>
+<td>Noah Spahn (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions.</td>
 </tr>
 <tr>
 <td width="120"><img src="david.jpg" alt="David" width="100"></td>
 <td>David Mather (davidmather)</td>
-</tr>
-<tr>
-<td width="120"><img src="georg.jpg" alt="Georg" width="100"></td>
-<td>Georg Kunz ()</td>
 </tr>
 </table>
