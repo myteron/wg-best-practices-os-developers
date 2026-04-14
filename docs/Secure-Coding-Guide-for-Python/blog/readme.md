@@ -99,7 +99,7 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 <table>
 <tr>
 <td width="120"><img src="helge.jpg" alt="Helge" width="100"></td>
-<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann's Ahlone and Inline hockey</td>
+<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann's Athlone and does a bit of Inline Hockey for sports</td>
 </tr>
 <tr>
 <td width="120"><img src="thomas.jpg" alt="Thomas" width="100"></td>
@@ -107,11 +107,13 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 </tr>
 <tr>
 <td width="120"><img src="hubert.jpg" alt="Hubert" width="100"></td>
-<td>Hubert Daniszewski (s19110) is a Java and Python software developer with over five years of experience writing, maintaining, and debugging code in both languages. A former Security Master at TietoEvry, he continues to expand his expertise in secure coding and applies it in practice. He was one of the first contributors to the Secure Coding for Python project, where he reviewed and authored rules, particularly in the area of concurrency.</td>
+<td>Hubert Daniszewski (s19110) is a Java and Python software developer with over five years of experience writing, maintaining, and debugging code in both languages.
+ A former Security Master at TietoEvry, he continues to expand his expertise in secure coding and applies it in practice.
+ He was one of the first contributors to the Secure Coding for Python project, where he reviewed and authored rules, particularly in the area of concurrency.</td>
 </tr>
 <tr>
 <td width="120"><img src="bart.jpg" alt="Bart" width="100"></td>
-<td>Bartlomiej Karas (BartKaras1128) is a software engineer and open source contributor with a focus on secure development practices and modern software supply chain resilience. He is actively involved in community-driven initiatives that promote transparency, collaboration, and security across ecosystems. Bartłomiej is particularly interested in automation, CI/CD security, and fostering best practices for developers at all levels.</td>
+<td>Bartlomiej Karas (BartKaras1128) is a Software Developer and Security Master at Ericsson, bringing hands-on experience with Cloud Native solutions and a strong command of multiple programming languages, including Python. Throughout his career, he has contributed to numerous security enhancements and developed various automation solutions for hardware installation. Beyond his professional work, Bartlomiej has a passion for Game Development and has created multiple games as a hobbyist.</td>
 </tr>
 <tr>
 <td width="120"><img src="andrew.jpg" alt="Andrew" width="100"></td>
@@ -123,14 +125,14 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 </tr>
 <tr>
 <td width="120"><img src="georg.jpg" alt="Georg" width="100"></td>
-<td>Georg Kunz (gkunz) is a passionate advocate for open source software and a long term contributor to a wide range of open source projects and communities. He currently serves on the Technical Advisory Council (TAC) and the Governing Board of the Open Source Security Foundation (OpenSSF), co-chairs the OpenSSF Best Practices Working Group, and is a member of the TODO Group's Steering Committee.</td>
+<td>Georg Kunz (gkunz) is a passionate advocate for open source software and a long term contributor to a wide range of open source projects and communities. He currently serves on the Technical Advisory Council (TAC) and the Governing Board of the Open Source Security Foundation (OpenSSF), co-chairs the OpenSSF Best Practices Working Group,  and is a member of the TODO Group’ s Steering Committee.</td>
 </tr>
 <tr>
 <td width="120"><img src="noah.jpg" alt="Noah" width="100"></td>
-<td>Noah Spahn (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions.</td>
+<td>Noah Spahn (noah-de) (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions.</td>
 </tr>
 <tr>
 <td width="120"><img src="david.jpg" alt="David" width="100"></td>
-<td>David Mather (davidmather)</td>
+<td>David Mather (davidmather) currently working as Product Owner in Operations Support Systems (OSS) for large scale radio networks. David was one of the first contributors helping to architect the Secure Coding Guide for Python. Has been working as a software engineer and security master at Ericsson for several years. He encouraged team members, including Bartlomiej Karas and Andrew Costello, to contribute to the guide. Additionally, he collaborated with Bartlomiej Karas and Georg Kunz to demonstrate the project in [Vienna 2025](https://www.linkedin.com/feed/update/urn:li:activity:7241428233362055168/)</td>
 </tr>
 </table>
