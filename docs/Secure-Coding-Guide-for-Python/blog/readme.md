@@ -1,10 +1,4 @@
-# One Stop Shop 🐍: OpenSSF Releases Secure Coding Guide for Python
-
-By [OpenSSF](https://openssf.org/author/openssf/) · March 2026 · [Blog](https://openssf.org/category/blog/)
-
----
-
-*By TODO: fill in full list of editors*
+# Secure Coding Guide for Python (pyscg) first release
 
 Onboarding new developers requires a learning resource that can act as a baseline of knowledge in secure coding that is independent of specific frameworks.
 
@@ -31,7 +25,7 @@ Static analysis tools and AI-assisted code review are valuable, but they cannot 
 The guide is organized into 9 sections covering the most critical areas of secure Python development:
 
 | Section | Topics | Rules |
-|:---|:---|:---:|
+| :--- | :--- | :---: |
 | 01 Introduction | Trust boundaries, hardcoded credentials, operator precedence, server-side access control | 4 |
 | 02 Encoding and Strings | Locale handling, input canonicalization, consistent encoding | 3 |
 | 03 Numbers | Floating-point precision, integer wraparound, numeric truncation, type conversion | 8 |
@@ -99,7 +93,7 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 <table>
 <tr>
 <td width="120"><img src="helge.jpg" alt="Helge" width="100"></td>
-<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann's Athlone and does a bit of Inline Hockey for sports</td>
+<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann's Athlone and does a bit of Inline Hockey for sports.</td>
 </tr>
 <tr>
 <td width="120"><img src="thomas.jpg" alt="Thomas" width="100"></td>
@@ -121,7 +115,12 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 </tr>
 <tr>
 <td width="120"><img src="dean.jpg" alt="Dean" width="100"></td>
-<td>Dean Wiley (dwiley258)</td>
+<td>Dean Wiley (dwiley258) is a Senior Software Engineer and Security Master at Ericsson with over five years of experience in Python
+development. He specialises in cloud-based solutions and automation tooling for cloud deployments, with a strong focus on
+security and building secure systems. Throughout his career, he has developed a keen interest in enforcing design rules and
+coding standards across codebases, as well as building tools to ensure ongoing compliance. Outside of work, he enjoys playing
+music, with a particular passion for bass guitar and cello.
+</td>
 </tr>
 <tr>
 <td width="120"><img src="georg.jpg" alt="Georg" width="100"></td>
@@ -133,6 +132,6 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 </tr>
 <tr>
 <td width="120"><img src="david.jpg" alt="David" width="100"></td>
-<td>David Mather (davidmather) currently working as Product Owner in Operations Support Systems (OSS) for large scale radio networks. David was one of the first contributors helping to architect the Secure Coding Guide for Python. Has been working as a software engineer and security master at Ericsson for several years. He encouraged team members, including Bartlomiej Karas and Andrew Costello, to contribute to the guide. Additionally, he collaborated with Bartlomiej Karas and Georg Kunz to demonstrate the project in [Vienna 2025](https://www.linkedin.com/feed/update/urn:li:activity:7241428233362055168/)</td>
+<td>David Mather (davidmather) currently working as Product Owner in Operations Support Systems (OSS) for large scale radio networks. David was one of the first contributors helping to architect the Secure Coding Guide for Python. Has been working as a software engineer and security master at Ericsson for several years. He encouraged team members, including Bartlomiej Karas and Andrew Costello, to contribute to the guide. Additionally, he collaborated with Bartlomiej Karas and Georg Kunz to demonstrate the project in <a href="https://www.linkedin.com/feed/update/urn:li:activity:7241428233362055168/">[Vienna 2025]</a></td>
 </tr>
 </table>
