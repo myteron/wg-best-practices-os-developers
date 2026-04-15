@@ -129,7 +129,7 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 </tr>
 <tr>
 <td width="120"><img src="noah.jpg" alt="Noah" width="100"></td>
-<td>Noah Spahn (noah-de) (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions.</td>
+<td>Noah Spahn (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions.</td>
 </tr>
 <tr>
 <td width="120"><img src="david.jpg" alt="David" width="100"></td>
