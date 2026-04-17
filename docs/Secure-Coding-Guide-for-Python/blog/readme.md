@@ -93,7 +93,7 @@ Join the community on the OpenSSF [Slack](https://slack.openssf.org/) by searchi
 <table>
 <tr>
 <td width="120"><img src="helge.jpg" alt="Helge" width="100"></td>
-<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann's Athlone and does a bit of Inline Hockey for sports.</td>
+<td>Helge Wehder (myteron) is a Security Principal Master with a background in Operations Support Systems (OSS) for large scale radio networks using Python. Helge enjoys creating embedded systems with his 4 children. Plays Bass guitar on a Sunday session in Flann’s Athlone and does a bit of Inline Hockey for sports.</td>
 </tr>
 <tr>
 <td width="120"><img src="thomas.jpg" alt="Thomas" width="100"></td>
@@ -124,11 +124,11 @@ music, with a particular passion for bass guitar and cello.
 </tr>
 <tr>
 <td width="120"><img src="georg.jpg" alt="Georg" width="100"></td>
-<td>Georg Kunz (gkunz) is a passionate advocate for open source software and a long term contributor to a wide range of open source projects and communities. He currently serves on the Technical Advisory Council (TAC) and the Governing Board of the Open Source Security Foundation (OpenSSF), co-chairs the OpenSSF Best Practices Working Group,  and is a member of the TODO Group’ s Steering Committee.</td>
+<td>Georg Kunz (gkunz) is a passionate advocate for open source software and a long term contributor to a wide range of open source projects and communities. He currently serves on the Technical Advisory Council (TAC) and the Governing Board of the Open Source Security Foundation (OpenSSF), co-chairs the OpenSSF Best Practices Working Group,  and is a member of the TODO Group’s Steering Committee.</td>
 </tr>
 <tr>
 <td width="120"><img src="noah.jpg" alt="Noah" width="100"></td>
-<td>Noah Spahn (noah-de) (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions.</td>
+<td>Noah Spahn (noah-de) is an open source software contributor and Associate Professor at Point Loma Nazarene University. He has a broad background in software development and DevSecOps, with experience in applications ranging from Earth science models to data center automation, network forensics and enterprise business solutions..</td>
 </tr>
 <tr>
 <td width="120"><img src="david.jpg" alt="David" width="100"></td>
