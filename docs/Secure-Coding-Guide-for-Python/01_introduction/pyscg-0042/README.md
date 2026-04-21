@@ -11,7 +11,6 @@ type
 </th>
 <th>examples</th>
 <th>Typical direction</th>
-</tr>
 <tr>
 <td>Assignments</td><td>to store a value such as x = 1</td><td>right-to-left.</td>
 </tr>
@@ -144,12 +143,12 @@ for number in range(-6, 6):
 ## Automated Detection
 
 <table>
-    <tr>
+    <hr>
         <td>Tool</td>
         <td>Version</td>
         <td>Checker</td>
         <td>Description</td>
-    </tr>
+    </hr>
     <tr>
         <td>Bandit</td>
         <td>1.7.4 on Python 3.10.4</td>
