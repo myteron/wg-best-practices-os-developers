@@ -11,6 +11,7 @@ type
 </th>
 <th>examples</th>
 <th>Typical direction</th>
+</tr>
 <tr>
 <td>Assignments</td><td>to store a value such as x = 1</td><td>right-to-left.</td>
 </tr>
