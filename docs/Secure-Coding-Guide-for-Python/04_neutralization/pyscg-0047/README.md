@@ -126,7 +126,7 @@ ValueError: Invalid input tag
 
 ```
 
-According to *Unicode Technical Report #36, Unicode Security Considerations [Davis 2008b](https://www.unicode.org/reports/tr36/), `\uFFFD`  is usually unproblematic, as a replacement for unwanted or dangerous characters. That is, `\uFFFD` will typically just cause a failure in parsing. Where the output character set is not Unicode, though, this character may not be available.
+According to *Unicode Technical Report #36, Unicode Security Considerations [Davis 2008b](https://www.unicode.org/reports/tr36/tr36-15.html), `\uFFFD`  is usually unproblematic, as a replacement for unwanted or dangerous characters. That is, `\uFFFD` will typically just cause a failure in parsing. Where the output character set is not Unicode, though, this character may not be available.
 
 ## Automated Detection
 
