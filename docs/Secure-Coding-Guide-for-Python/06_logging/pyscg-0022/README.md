@@ -160,7 +160,6 @@ WARNING:root:Rejected login attempt: invalid username="guest'\nWARNING:root:User
         <td><a href="https://cheatsheetseries.owasp.org/index.html">OWASP Cheat Sheet Series</a></td>
         <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Logging Cheat Sheet</a></td>
     </tr>
-    </tr>
     <tr>
         <td>ISO/IEC TR 24772:2013</td>
         <td><a href="https://www.iso.org/standard/61457.html">ISO/IEC TR 24772:2013 Information technology — Programming languages — Guidance to avoiding vulnerabilities in programming languages through language selection and use </a></td>
