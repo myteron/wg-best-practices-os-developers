@@ -154,8 +154,7 @@ WARNING:root:Rejected login attempt: invalid username="guest'\nWARNING:root:User
     </tr>
     <tr>
         <td><a href="https://owasp.org/">OWASP ASVS 4.0</a></td>
-        <td><a href="https://owasp.org/www-project-application-security-verification-standard/">OWASP Application Security Verification Standard (ASVS) </a>. See "V16 Security Logging and Error Handling".
-</td>
+   <td><a href="https://owasp.org/www-project-application-security-verification-standard/">OWASP Application Security Verification Standard (ASVS) </a>. See "V16 Security Logging and Error Handling".</td>
     </tr>
     <tr>
         <td><a href="https://cheatsheetseries.owasp.org/index.html">OWASP Cheat Sheet Series</a></td>
