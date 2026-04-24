@@ -145,10 +145,10 @@ for number in range(-6, 6):
 
 <table>
     <tr>
-        <td>Tool</td>
-        <td>Version</td>
-        <td>Checker</td>
-        <td>Description</td>
+        <th>Tool</th>
+        <th>Version</th>
+        <th>Checker</th>
+        <th>Description</th>
     </tr>
     <tr>
         <td>Bandit</td>
