@@ -1,90 +1,169 @@
-# pyscg-0056: Assure to use and verify Signed Software
+# pyscg-0056: Verify Downloaded Code Before Running It
 
 Verify a downloaded artifact against a digest or signature obtained through a separate channel before executing it.
 
-Transport security, used for downloading an artifact such as a Python installer or .whl wheel file, verifies the authenticity of the host we download from and not the authetnicity of the artefact it self. Now a mirror, a caching proxy, a compromised build host, or anyone able to alter the response body can substitute code including the SHA that would be used to verify integrity.
+Transport security authenticates the host that answered the request, not the bytes it returned. A mirror, a caching proxy, a compromised build host, or anyone able to alter the response body can substitute code, and the receiving process runs it with its own privileges.
 
-So we need a trustworthy alternative transport channel to allowing integrity verification.
+Two mistakes recur:
 
-A SHA only becomes usefull if we can verify that its correct if we can query an authority via a trusted independent channel.
+* Executing an artifact after fetching it over `https`, treating the transport as proof of provenance.
+* Comparing the artifact against a digest published beside it. Whoever replaces the artifact replaces the digest.
 
-Software or artifacts can be downloaded and installed either through a package manager or without.
+The expected value must therefore come from somewhere the attacker does not control, such as a value pinned in source control or a signature that chains to a key established out of band.
 
-As of writing this rule, the following package managers enforce both integrity and authenticity verification by default:
+## Non-Compliant Code Example
 
-- `apt` (Debian, Ubuntu)
-- `dnf` / `yum` (Red Hat, Fedora, CentOS)
-- `zypper` (SUSE, openSUSE)
-- `pacman` (Arch Linux)
-- `apk` (Alpine)
-- `nix` (NixOS)
-- App Store (macOS, iOS)
-- Microsoft Store (Windows)
-- Google Play (Android)
-- F-Droid (Android)
+The `noncompliant01.py` code example downloads a plugin and executes it without verification.
 
-Others either:
+[*noncompliant01.py:*](noncompliant01.py)
 
-- Do not enforce verification
-- Only cover integrity checks without proving publisher identity
+```py
+"""Non-compliant Code Example"""
 
-Installing `.exe`, `.rpm` or `.whl` artefacts directly without without a packaage manager, is typically missing security checks!
+import urllib.request
+
+PLUGIN_URL = "https://downloads.example.com/plugin.py"
 
 
-
-Signed software allows integrity and authenticity verification at scale with zero need to trust anyone in between the creator of an artefact, such as CPython it self or a `.whl` wheel file and consumer installing it.
-
-Data from [OSV.dev](https://osv.de) shows the scale malware code attacks that exists entirely outside CVE tracking
-
-*Malware and CVEs by year on Python based projects*
-
-| Year | Malware (`MAL-`) | CVEs | Malware with a CVE | Malware share |
-| :----- | -----------------: | -----: | -------------------: | --------------: |
-| 2023 | 6,468\* | 497 | 0 | 93%\* |
-| 2024 | 2,478 | 793 | 0 | 76% |
-| 2025 | 1,419 | 721 | 0 | 66% |
-
-This creates a visibility gap: the OSV MAL database tracks thousands of malicious PyPI packages per year that have no CVE, no CVSS score, and no EPSS rating.
-
->NOTE: Zero trust principal also requires artefacts to be free of secrets.
+def load_plugin(url: str) -> dict:
+    """Download a plugin and run it."""
+    with urllib.request.urlopen(url) as response:  # noqa: S310
+        source = response.read()
+    namespace: dict = {}
+    exec(source, namespace)  # noqa: S102
+    return namespace
 
 
-## Code Examples
-
-The following examples demonstrate how to inspect the signature verification your OS already performed when installing Python.
-
-### Linux (Debian/Ubuntu)
-
-[*example01.sh:*](example01.sh)
-
-```bash
-#!/bin/bash
-# SPDX-FileCopyrightText: OpenSSF project contributors
-# SPDX-License-Identifier: MIT
-# example01.sh — Verify the installed python3 package signature (Debian/Ubuntu)
-set -euo pipefail
-
-# Which package owns the python3 binary?
-PKG=$(dpkg -S "$(which python3)" | cut -d: -f1)
-
-# Verify its installed files against the signed package metadata
-dpkg --verify "$PKG"
-
-# Show the repo GPG key that authenticated the package
-apt-key adv --list-public-keys --keyid-format long 2>/dev/null | grep -A1 "^pub"
+#####################
+# Trying to exploit above code example
+#####################
+# A mirror, a cache, or anyone able to alter the response body serves this
+# instead. TLS authenticates the host that answered, not the bytes it sent.
+ATTACKER_SOURCE = b"import os\nos.system('id')\n"
+namespace: dict = {}
+exec(ATTACKER_SOURCE, namespace)  # noqa: S102
+print("attacker code ran with the privileges of this process")
 ```
 
-### Windows
+The substituted code executes with the privileges of the running process.
 
-[*example01.ps1:*](example01.ps1)
+## Compliant Solution
 
-```powershell
-# SPDX-FileCopyrightText: OpenSSF project contributors
-# SPDX-License-Identifier: MIT
-# example01.ps1 — Verify the installed python3 binary signature (Windows)
+The `compliant01.py` code example compares the artifact against a digest pinned in source control and refuses to return it on mismatch. `hmac.compare_digest` performs the comparison in constant time.
 
-$python = (Get-Command python).Source
-Get-AuthenticodeSignature $python
+[*compliant01.py:*](compliant01.py)
+
+```py
+"""Compliant Code Example"""
+
+import hashlib
+import hmac
+
+# Obtained from the publisher through a channel the attacker does not control,
+# such as a pinned value in this repository. A digest served alongside the
+# artifact proves nothing: whoever replaces one replaces the other.
+EXPECTED_SHA256 = "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"
+
+
+class IntegrityError(Exception):
+    """Raised when an artifact does not match its expected digest."""
+
+
+def verify(artifact: bytes, expected_hex: str) -> bytes:
+    """Return the artifact only if its digest matches the expected value."""
+    digest = hashlib.sha256(artifact).hexdigest()
+    if not hmac.compare_digest(digest, expected_hex):
+        raise IntegrityError("artifact does not match its expected digest")
+    return artifact
+
+
+#####################
+# Trying to exploit above code example
+#####################
+ATTACKER_SOURCE = b"import os\nos.system('id')\n"
+try:
+    verify(ATTACKER_SOURCE, EXPECTED_SHA256)
+except IntegrityError as error:
+    print(f"rejected before execution: {error}")
 ```
 
-The mobile platforms (iOS, Android) are the strongest model: verification is enforced at the OS level and cannot be bypassed without rooting/jailbreaking the device.
+The substituted artifact is rejected before it reaches `exec`.
+
+## Verifying Packages Installed From an Index
+
+A pinned digest establishes that an artifact has not changed since it was pinned. It says nothing about who produced it, and it does not scale to transitive dependencies.
+
+For packages installed from PyPI, [PEP 740] index attestations record which repository and which workflow built a distribution, signed through Sigstore and recorded in a public transparency log. PyPI serves them at `/integrity/<project>/<version>/<file>/provenance`. Because the log is append-only and publicly auditable, a publisher cannot later deny a signature it issued.
+
+Note that the older wheel signing mechanism is no longer available. `RECORD.jws` and `RECORD.p7s` are deprecated in the binary distribution format specification, which states that build backends "must not add them to wheels anymore" \[PyPA 2026\].
+
+Trust on first use, where the first key seen is pinned and later keys are compared against it, is a different trust model rather than a weaker form of the same one. It detects a key changing but cannot establish that the first key was ever the right one.
+
+## Automated Detection
+
+<table>
+    <tr>
+        <td>Tool</td>
+        <td>Version</td>
+        <td>Checker</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>Bandit</td>
+        <td>1.8.3 on Python 3.13</td>
+        <td>B102</td>
+        <td>exec_used</td>
+    </tr>
+    <tr>
+        <td>Bandit</td>
+        <td>1.8.3 on Python 3.13</td>
+        <td>B310</td>
+        <td>urllib_urlopen</td>
+    </tr>
+    <tr>
+        <td>Ruff</td>
+        <td>0.12 on Python 3.13</td>
+        <td>S102, S310</td>
+        <td>flake8-bandit rules, detects the execution and the fetch but not the missing verification between them</td>
+    </tr>
+</table>
+
+## Related Guidelines
+
+<table>
+    <tr>
+        <td><a href="http://cwe.mitre.org/">MITRE CWE</a></td>
+        <td>Base: <a href="https://cwe.mitre.org/data/definitions/494.html">[CWE-494: Download of Code Without Integrity Check]</a></td>
+    </tr>
+    <tr>
+        <td><a href="http://cwe.mitre.org/">MITRE CWE</a></td>
+        <td>Class: <a href="https://cwe.mitre.org/data/definitions/345.html">[CWE-345: Insufficient Verification of Data Authenticity]</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java">[SEI CERT Oracle Coding Standard for Java]</a></td>
+        <td><a href="https://wiki.sei.cmu.edu/confluence/display/java/SEC06-J.+Do+not+rely+on+the+default+automatic+signature+verification+provided+by+URLClassLoader+and+java.util.jar">[SEC06-J. Do not rely on the default automatic signature verification provided by URLClassLoader and java.util.jar]</a></td>
+    </tr>
+</table>
+
+## Bibliography
+
+<table>
+    <tr>
+        <td>[PyPA 2026]</td>
+        <td>Binary distribution format [online]. Available from: <a href="https://packaging.python.org/en/latest/specifications/binary-distribution-format/">https://packaging.python.org/en/latest/specifications/binary-distribution-format/</a> [Accessed 4 August 2026]</td>
+    </tr>
+    <tr>
+        <td>[PEP 740 2024]</td>
+        <td>PEP 740 - Index support for digital attestations [online]. Available from: <a href="https://peps.python.org/pep-0740/">https://peps.python.org/pep-0740/</a> [Accessed 4 August 2026]</td>
+    </tr>
+    <tr>
+        <td>[Python 2026]</td>
+        <td>hmac - Keyed-Hashing for Message Authentication [online]. Available from: <a href="https://docs.python.org/3/library/hmac.html#hmac.compare_digest">https://docs.python.org/3/library/hmac.html#hmac.compare_digest</a> [Accessed 4 August 2026]</td>
+    </tr>
+    <tr>
+        <td>[NIST 2022]</td>
+        <td>SP 800-218 Secure Software Development Framework (SSDF) Version 1.1 [online]. Available from: <a href="https://csrc.nist.gov/pubs/sp/800/218/final">https://csrc.nist.gov/pubs/sp/800/218/final</a> [Accessed 4 August 2026]</td>
+    </tr>
+</table>
+
+[PEP 740]: https://peps.python.org/pep-0740/

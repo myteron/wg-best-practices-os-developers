@@ -158,6 +158,10 @@ provenance evidence is available.
 
 ## Why this matters for the rule
 
+This data supports
+[pyscg-0059: Use Keyed Message Authentication for Shared-Secret Integrity](issue_711_building_blocks_draft.md)
+and its observation that HMAC does not solve publisher provenance or public software distribution.
+
 Scanning dependencies against CVE databases, however diligently, cannot detect any of the 11,650
 malware entries counted here. There is no fixed version to upgrade to, because nothing is broken.
 Provenance verification and vulnerability management address different failures, and neither

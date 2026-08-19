@@ -7,14 +7,13 @@ The following rules are covered in this section:
 - [pyscg-0038: Use Sufficiently Random Values](pyscg-0038/README.md)
 - pyscg-0057: Use Cryptographic Hashes for Integrity Checks <!-- [issue](link) -->
 - pyscg-0058: Compare Security-Critical Values in Constant Time <!-- [issue](link) -->
-- pyscg-0059: Use Keyed Message Authentication for Shared-Secret Integrity <!-- [issue](link) -->
+- [pyscg-0056: Use Keyed Message Authentication for Shared-Secret Integrity](pyscg-0056/README.md) <!-- [issue](link) -->
 - pyscg-0060: Derive Keys Securely from Passwords <!-- [issue](link) -->
 - pyscg-0061: Use TLS with Certificate Validation on Network Interfaces <!-- [issue](link) -->
 - pyscg-0062: Use Authenticated Encryption Instead of Ad-Hoc Encryption Plus Integrity <!-- [issue](link) -->
 - pyscg-0063: Use Digital Signatures for Publisher-Verifiable Authenticity <!-- [issue](link) -->
 - pyscg-0064: Validate X.509 Certificates and Chains Outside TLS Handshakes <!-- [issue](link) -->
-- pyscg-0065: Verify Package Provenance and Publisher Identity with Index-Hosted Attestations <!-- [issue](link) -->
-- pyscg-0066: Verify Attestation Signatures and Transparency Evidence <!-- [issue](link) -->
+- [pyscg-0065: Verify Package Provenance and Publisher Identity with Index-Hosted Attestations](pyscg-0065/README.md) <!-- [issue](link) -->
 
 ## What this section is about
 
